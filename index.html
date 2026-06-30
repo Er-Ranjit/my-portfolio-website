@@ -4,17 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Ranjit Kumar | Portfolio</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<div class="bomb-rain-container">
+  <div class="bomb b1">💣</div>
+  <div class="bomb b2">💥</div>
+  <div class="bomb b3">💣</div>
+  <div class="bomb b4">💥</div>
+  <div class="bomb b5">💣</div>
+  <div class="bomb b6">💥</div>
+  <div class="bomb b7">💣</div>
+  <div class="bomb b8">💥</div>
+  <div class="bomb b9">💣</div>
+  <div class="bomb b10">💥</div>
+  <div class="bomb b1">💣</div>
+  <div class="bomb b2">💥</div>
+  <div class="bomb b3">💣</div>
+  <div class="bomb b4">💥</div>
+  <div class="bomb b5">💣</div>
+  <div class="bomb b6">💥</div>
+  <div class="bomb b7">💣</div>
+  <div class="bomb b8">💥</div>
+  <div class="bomb b9">💣</div>
+  <div class="bomb b10">💥</div>
+</div>
 
     <!-- NAVBAR -->
 
@@ -83,7 +101,9 @@
                 <span>Kumar</span>
             </h1>
 
-            <h3>Full Stack Developer</h3>
+            <h3>
+                I'm a <span class="typing-text">Full Stack Developer</span>
+            </h3>
 
             <p>
                 I build modern web applications using
@@ -159,7 +179,7 @@
 
                 <div class="about-glow"></div>
 
-                <img src="./images/ranjit.jpeg" alt="Ranjit Kumar">
+                <img src="./images/image.png" alt="Ranjit Kumar">
 
             </div>
 
@@ -467,15 +487,15 @@
 
             <div class="contact-right">
 
-                <form>
+                <form id="contact-form">
 
-                    <input type="text" placeholder="Your Name">
+                    <input type="text" name="FullName" placeholder="Your Name" required>
 
-                    <input type="email" placeholder="Your Email">
+                    <input type="email" name="Email" placeholder="Your Email" required>
 
-                    <input type="text" placeholder="Subject">
+                    <input type="text" name="Subject" placeholder="Subject" required>
 
-                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <textarea rows="5" name="Message" placeholder="Your Message" required></textarea>
 
                     <button type="submit">
                         Send Message
@@ -530,6 +550,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
