@@ -1332,7 +1332,7 @@ header {
 .timeline-title {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #0f172a; /* CHANGED: Pure sharp slate black for light theme */
+    color: #0745d4; /* CHANGED: Pure sharp slate black for light theme */
     letter-spacing: -0.5px;
     margin-bottom: 0.5rem;
 }
