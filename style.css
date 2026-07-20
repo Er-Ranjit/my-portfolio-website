@@ -29,7 +29,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1; /* Background layer */
+    z-index: 1; 
     pointer-events: none; /* Clicks block nahi honge */
     background-color: #f8fafc; /* Premium light body base */
 }

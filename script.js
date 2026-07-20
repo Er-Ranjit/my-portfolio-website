@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "particles": {
                 "number": { 
                     "value": 75, 
-                    "density": { "enable": true, "value_area": 800 } 
+                    "density": { "enable": true, "value_area": 500 } 
                 },
                 "color": { 
-                    "value": "#4f46e5" /* Light background par visibility ke liye deep indigo color */
+                    "value": "#1ae6cb" /* Light background par visibility ke liye deep indigo color */
                 },
                 "shape": { "type": "circle" },
                 "opacity": { 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "line_linked": {
                     "enable": true,
                     "distance": 140,
-                    "color": "#4f46e5", /* Connecting lines ka color */
+                    "color": "#fb00f3", /* Connecting lines ka color */
                     "opacity": 0.1,
                     "width": 1.2
                 },
