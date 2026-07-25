@@ -202,4 +202,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    
+    fetch("/contact", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: "Ranjit",
+        email: "ranjit@gmail.com",
+        message: "Hello, I want to hire you."
+    })
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.error(err));
+
+const sendBtn = document.getElementById("sendBtn");
+
+sendBtn.addEventListener("click", async () => {
+
+    const message = document.getElementById("userMessage").value;
+
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+
+    document.getElementById("chatBox").innerHTML += `
+        <p><b>You:</b> ${message}</p>
+        <p><b>AI:</b> ${data.reply}</p>
+    `;
+});
