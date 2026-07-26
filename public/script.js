@@ -1,52 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. Pure JavaScript Typing Animation Logic ---
-    const words = ['Full Stack Developer', 'MERN Stack Expert', 'UI/UX Designer', 'Problem Solver'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingDelay = 100;
-    const erasingDelay = 50;
-    const newWordDelay = 2000; // Word badalne ka wait time
-    
-    const typingTextSpan = document.getElementById("typing-text");
-
-    function type() {
-        if (!typingTextSpan) return;
-
-        const currentWord = words[wordIndex];
-        
-        if (isDeleting) {
-            // Text delete ho rha hai
-            typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            // Text type ho rha hai
-            typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        if (!isDeleting && charIndex === currentWord.length) {
-            // Word complete ho gya, break lo phir delete shuru karo
-            isDeleting = true;
-            setTimeout(type, newWordDelay);
-        } else if (isDeleting && charIndex === 0) {
-            // Word khatam, agla word pick karo
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(type, 500);
-        } else {
-            // Continue typing or erasing
-            setTimeout(type, isDeleting ? erasingDelay : typingDelay);
-        }
-    }
-
-    // Start Typing Process
-    if(typingTextSpan) {
-        setTimeout(type, 1000);
-    }
-
-
 /*=========================================
         PREMIUM NAVBAR JS
 =========================================*/
@@ -55,304 +6,402 @@ const header = document.querySelector(".header");
 const menuToggle = document.getElementById("mobile-menu");
 const mobileMenu = document.getElementById("mobileMenu");
 
-/* =========================
-      Mobile Menu Toggle
-========================= */
+if (menuToggle && mobileMenu) {
+  /* =========================
+          Mobile Menu Toggle
+    ========================= */
 
-menuToggle.addEventListener("click", (e) => {
-
+  menuToggle.addEventListener("click", (e) => {
     e.stopPropagation();
 
     menuToggle.classList.toggle("active");
     mobileMenu.classList.toggle("open");
+  });
 
-});
+  /* =========================
+          Close Outside Click
+    ========================= */
 
-/* =========================
-      Close Outside Click
-========================= */
-
-document.addEventListener("click", (e) => {
-
-    if (
-        !mobileMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-    ) {
-
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("open");
-
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menuToggle.classList.remove("active");
+      mobileMenu.classList.remove("open");
     }
+  });
 
-});
+  /* =========================
+          Stop Closing
+    ========================= */
 
-/* =========================
-      Stop Closing
-========================= */
-
-mobileMenu.addEventListener("click", (e) => {
-
+  mobileMenu.addEventListener("click", (e) => {
     e.stopPropagation();
+  });
 
-});
+  /* =========================
+          Close After Click Link
+    ========================= */
 
-/* =========================
-      Close After Click Link
-========================= */
+  const mobileLinks = document.querySelectorAll(".mobile-menu a");
 
-const mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-mobileLinks.forEach(link => {
-
+  mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
-
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("open");
-
+      menuToggle.classList.remove("active");
+      mobileMenu.classList.remove("open");
     });
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. Pure JavaScript Typing Animation Logic ---
+  const words = [
+    "Full Stack Developer",
+    "MERN Stack Expert",
+    "UI/UX Designer",
+    "Problem Solver",
+  ];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingDelay = 100;
+  const erasingDelay = 50;
+  const newWordDelay = 2000;
 
-});
+  const typingTextSpan = document.getElementById("typing-text");
 
-/* =========================
-      Navbar Scroll Effect
-========================= */
+  function type() {
+    if (!typingTextSpan) return;
+    const currentWord = words[wordIndex];
 
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 50) {
-
-        header.classList.add("scrolled");
-
+    if (isDeleting) {
+      typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
     } else {
-
-        header.classList.remove("scrolled");
-
+      typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
     }
 
-});
-
-/* =========================
-      Active Navigation
-========================= */
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const top = section.offsetTop - 120;
-        const height = section.offsetHeight;
-
-        if (window.scrollY >= top && window.scrollY < top + height) {
-
-            current = section.id;
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-    mobileNavLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-/* =========================
-      Smooth Scroll
-========================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-
-            e.preventDefault();
-
-            window.scrollTo({
-
-                top: target.offsetTop - 90,
-
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-    
-
-    // --- 3. Interactive Premium Light Particles Engine ---
-    // FIXED: Ab ye block DOMContentLoaded ke andar hai aur colors light theme ke liye optimized hain
-    if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { 
-                    "value": 75, 
-                    "density": { "enable": true, "value_area": 500 } 
-                },
-                "color": { 
-                    "value": "#1ae6cb" /* Light background par visibility ke liye deep indigo color */
-                },
-                "shape": { "type": "circle" },
-                "opacity": { 
-                    "value": 0.15, /* Soft contrast taaki text focus me rahe */
-                    "random": false 
-                },
-                "size": { "value": 3.5, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 140,
-                    "color": "#fb00f3", /* Connecting lines ka color */
-                    "opacity": 0.1,
-                    "width": 1.2
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 1.5,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": { "distance": 140, "line_linked": { "opacity": 0.35 } }
-                }
-            },
-            "retina_detect": true
-        });
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(type, newWordDelay);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 500);
     } else {
-        console.log("Particles library not loaded yet.");
+      setTimeout(type, isDeleting ? erasingDelay : typingDelay);
     }
+  }
 
-}); // DOMContentLoaded yahan perfect close ho rha hai
+  if (typingTextSpan) {
+    setTimeout(type, 1000);
+  }
 
+  // --- 2. Mobile Responsive Navbar Navigation Logic ---
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links a");
 
-    // --- 4. Premium Projects Grid Shuffle Filter ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("is-active");
+      navLinks.classList.toggle("open");
+    });
 
-    if (filterButtons.length > 0 && projectCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Active class shuffle on buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        menuToggle.classList.remove("is-active");
+        navLinks.classList.remove("open");
+      });
+    });
+  }
 
-                const targetFilter = button.getAttribute('data-filter');
+  // --- 3. Interactive Standalone Cyber Trailing Canvas Engine ---
+  const canvas = document.getElementById("cyber-matrix-canvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let dots = [];
+    const isMobileDevice = window.innerWidth < 768;
 
-                projectCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-
-                    if (targetFilter === 'all' || cardCategory === targetFilter) {
-                        card.classList.remove('hide');
-                    } else {
-                        card.classList.add('hide');
-                    }
-                });
-            });
-        });
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
+    let pointer = { x: null, y: null, active: false };
 
-        // --- 6. Contact Form Success Response Trigger ---
-    const contactForm = document.getElementById('portfolioContactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevents instant reload page
-            
-            // Temporary sweet response alert simulation
-            alert("Thank you, message sent successfully! Ranjit will connect with you soon.");
-            contactForm.reset(); // Clears all visual inputs boxes fields
-        });
-    }
+    if (!isMobileDevice) {
+      window.addEventListener("mousemove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        pointer.x = e.clientX - rect.left;
+        pointer.y = e.clientY - rect.top;
+        pointer.active = true;
 
-        // --- 7. Automated Copyright Year Synchronization Hook ---
-    const yearSpan = document.getElementById('copyrightYear');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-
-
-        // --- AUTOMATED SPA 404 URL ROUTER ENGINE ---
-    const errorPageModal = document.getElementById('errorPage404');
-    const goHomeErrorBtn = document.getElementById('goHomeErrorBtn');
-
-    if (errorPageModal) {
-        // Path checking: Check karega ki base root URL ke bad kuch extra subfolder toh nahi likha hai
-        const currentPathname = window.location.pathname;
-
-        // Port 5500 validation index tracker rule
-        // Agar pathname "/" ya "/index.html" ke alawa kuch bhi aur hai (jaise /service), toh error active hoga
-        if (currentPathname !== '/' && currentPathname !== '/index.html' && !currentPathname.endsWith('.html')) {
-            errorPageModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop scrolling background components
+        if (Math.random() < 0.4) {
+          dots.push({
+            x: pointer.x,
+            y: pointer.y,
+            size: Math.random() * 2.5 + 1,
+            color: Math.random() > 0.5 ? "#6366f1" : "#06b6d4",
+            speedX: (Math.random() - 0.5) * 1.5,
+            speedY: (Math.random() - 0.5) * 1.5,
+            alpha: 1,
+            decay: Math.random() * 0.02 + 0.01,
+          });
         }
-
-        // Back to home action button loop reset tracker mapping
-        if (goHomeErrorBtn) {
-            goHomeErrorBtn.addEventListener('click', () => {
-                errorPageModal.classList.remove('active');
-                // URL back coordinates parameters clean reset execution
-                window.location.href = window.location.origin; 
-            });
-        }
+      });
+      window.addEventListener("mouseleave", () => {
+        pointer.active = false;
+      });
     }
 
+    for (let i = 0; i < (isMobileDevice ? 15 : 45); i++) {
+      dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5 + 0.5,
+        color: "rgba(99, 102, 241, 0.25)",
+        speedX: (Math.random() - 0.5) * 0.25,
+        speedY: (Math.random() - 0.5) * 0.25,
+        alpha: Math.random() * 0.5 + 0.2,
+        decay: 0,
+      });
+    }
 
-    fetch("/contact", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name: "Ranjit",
-        email: "ranjit@gmail.com",
-        message: "Hello, I want to hire you."
-    })
+    function animateCyberGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < dots.length; i++) {
+        let d = dots[i];
+        ctx.save();
+        ctx.globalAlpha = d.alpha;
+        ctx.fillStyle = d.color;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        d.x += d.speedX;
+        d.y += d.speedY;
+
+        if (d.decay === 0) {
+          if (d.x < 0 || d.x > canvas.width) d.speedX *= -1;
+          if (d.y < 0 || d.y > canvas.height) d.speedY *= -1;
+        } else {
+          d.alpha -= d.decay;
+          if (d.alpha <= 0) {
+            dots.splice(i, 1);
+            i--;
+          }
+        }
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        for (let j = i + 1; j < dots.length; j++) {
+          let dist = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
+          if (dist < 80 && dots[i].decay > 0 && dots[j].decay > 0) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * dots[i].alpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateCyberGrid);
+    }
+    animateCyberGrid();
+  }
+
+  // --- 4. Interactive Particles Library Framework Engine ---
+  if (
+    document.getElementById("particles-js") &&
+    typeof particlesJS !== "undefined"
+  ) {
+    const isMobile = window.innerWidth < 768;
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: isMobile ? 30 : 65,
+          density: { enable: true, value_area: 600 },
+        },
+        color: { value: "#6366f1" },
+        shape: { type: "circle" },
+        opacity: { value: 0.12, random: true },
+        size: { value: isMobile ? 2 : 3.5, random: true },
+        line_linked: {
+          enable: true,
+          distance: isMobile ? 100 : 130,
+          color: "#06b6d4",
+          opacity: 0.08,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: !isMobile, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: { grab: { distance: 130, line_linked: { opacity: 0.25 } } },
+      },
+      retina_detect: true,
+    });
+  }
+});
+
+// --- 6. Elite High-Interaction Skills 3D Tilt & Magnetic Track Engine ---
+const isMobileUI = window.innerWidth < 768;
+
+if (!isMobileUI) {
+  const skillCards = document.querySelectorAll(".skill-grid-card");
+
+  skillCards.forEach((card) => {
+    // Mouse move parameters tracker function
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+
+      // Track dynamic mouse relative coordinates variables inside cards for CSS gradients
+      const xGlow = e.clientX - rect.left;
+      const yGlow = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${xGlow}px`);
+      card.style.setProperty("--mouse-y", `${yGlow}px`);
+
+      // 3D Perspective Angular Matrix Multipliers Calculations
+      const width = rect.width;
+      const height = rect.height;
+      const mouseX = e.clientX - rect.left - width / 2;
+      const mouseY = e.clientY - rect.top - height / 2;
+
+      // Bending values parameters calculations limit angle
+      const rotateX = -(mouseY / height) * 15; // Vertical bend angle percentage multiplier
+      const rotateY = (mouseX / width) * 15; // Horizontal bend angle percentage multiplier
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    });
+
+    // Mouse reset state execution layout trigger when cursor exits cards surface mapping
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+      card.style.setProperty("--mouse-x", `0px`);
+      card.style.setProperty("--mouse-y", `0px`);
+    });
+  });
+}
+
+// --- 7. Interactive Premium Tab Project Filter Router Engine ---
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove active states from other filtering triggers
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const activeFilterValue = button.getAttribute("data-filter");
+
+      projectCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+
+        // Filter switching fade routing conditions checks logic mapping
+        if (activeFilterValue === "all" || cardCategory === activeFilterValue) {
+          card.classList.remove("hide");
+          // Optional adding smooth fade scale triggers
+          card.style.opacity = "0";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transition = "opacity 0.4s ease";
+          }, 10);
+        } else {
+          card.classList.add("hide");
+        }
+      });
+    });
+  });
+}
+
+// --- 9. Dynamic Footer Year Configuration Auto Stamp ---
+const copyrightYearSpan = document.getElementById("copyrightYear");
+if (copyrightYearSpan) {
+  copyrightYearSpan.textContent = new Date().getFullYear();
+}
+
+// --- 6. Contact Form Success Response Trigger ---
+const contactForm = document.getElementById("portfolioContactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevents instant reload page
+
+    // Temporary sweet response alert simulation
+    alert(
+      "Thank you, message sent successfully! Ranjit will connect with you soon.",
+    );
+    contactForm.reset(); // Clears all visual inputs boxes fields
+  });
+}
+
+// --- 7. Automated Copyright Year Synchronization Hook ---
+const yearSpan = document.getElementById("copyrightYear");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// --- AUTOMATED SPA 404 URL ROUTER ENGINE ---
+const errorPageModal = document.getElementById("errorPage404");
+const goHomeErrorBtn = document.getElementById("goHomeErrorBtn");
+
+if (errorPageModal) {
+  // Path checking: Check karega ki base root URL ke bad kuch extra subfolder toh nahi likha hai
+  const currentPathname = window.location.pathname;
+
+  // Port 5500 validation index tracker rule
+  // Agar pathname "/" ya "/index.html" ke alawa kuch bhi aur hai (jaise /service), toh error active hoga
+  if (
+    currentPathname !== "/" &&
+    currentPathname !== "/index.html" &&
+    !currentPathname.endsWith(".html")
+  ) {
+    errorPageModal.classList.add("active");
+    document.body.style.overflow = "hidden"; // Stop scrolling background components
+  }
+
+  // Back to home action button loop reset tracker mapping
+  if (goHomeErrorBtn) {
+    goHomeErrorBtn.addEventListener("click", () => {
+      errorPageModal.classList.remove("active");
+      // URL back coordinates parameters clean reset execution
+      window.location.href = window.location.origin;
+    });
+  }
+}
+
+fetch("/contact", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: "Ranjit",
+    email: "ranjit@gmail.com",
+    message: "Hello, I want to hire you.",
+  }),
 })
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.error(err));
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error(err));
 
 /* ==========================================
         PREMIUM AI ASSISTANT
@@ -366,107 +415,92 @@ const chatBox = document.getElementById("chatBox");
         SEND MESSAGE
 ========================================== */
 
-async function sendMessage(message = null){
+async function sendMessage(message = null) {
+  const text = message || userInput.value.trim();
 
-    const text = message || userInput.value.trim();
+  if (text === "") return;
 
-    if(text === "") return;
+  if (!message) {
+    userInput.value = "";
+  }
 
-    if(!message){
-        userInput.value = "";
-    }
+  addUserMessage(text);
 
-    addUserMessage(text);
+  showTyping();
 
-    showTyping();
+  try {
+    const response = await fetch("/chat", {
+      method: "POST",
 
-    try{
+      headers: {
+        "Content-Type": "application/json",
+      },
 
-        const response = await fetch("/chat",{
+      body: JSON.stringify({
+        message: text,
+      }),
+    });
 
-            method:"POST",
+    const data = await response.json();
 
-            headers:{
-                "Content-Type":"application/json"
-            },
+    removeTyping();
 
-            body:JSON.stringify({
-                message:text
-            })
+    addBotMessage(data.reply);
+  } catch (error) {
+    removeTyping();
 
-        });
-
-        const data = await response.json();
-
-        removeTyping();
-
-        addBotMessage(data.reply);
-
-    }
-
-    catch(error){
-
-        removeTyping();
-
-        addBotMessage("❌ Unable to connect with AI Assistant.");
-
-    }
-
+    addBotMessage("❌ Unable to connect with AI Assistant.");
+  }
 }
 
 /* ==========================================
         USER MESSAGE
 ========================================== */
 
-function addUserMessage(text){
+function addUserMessage(text) {
+  const div = document.createElement("div");
 
-    const div=document.createElement("div");
+  div.className = "user-message";
 
-    div.className="user-message";
+  div.innerHTML = `${text}`;
 
-    div.innerHTML=`${text}`;
+  chatBox.appendChild(div);
 
-    chatBox.appendChild(div);
-
-    scrollBottom();
-
+  scrollBottom();
 }
 
 /* ==========================================
         BOT MESSAGE
 ========================================== */
 
-function addBotMessage(text){
+function addBotMessage(text) {
+  const div = document.createElement("div");
 
-    const div=document.createElement("div");
+  div.className = "bot-message";
 
-    div.className="bot-message";
-
-    div.innerHTML=`
+  div.innerHTML = `
         <p class="msg-txt">${text}</p>
     `;
 
-    chatBox.appendChild(div);
+  chatBox.appendChild(div);
 
-    scrollBottom();
-
+  scrollBottom();
 }
 
 /* ==========================================
         TYPING EFFECT
 ========================================== */
 
-function showTyping(){
+function showTyping() {
+  removeTyping();
 
-    removeTyping();
+  const typing = document.createElement("div");
 
-    const typing=document.createElement("div");
+  typing.className = "typing-indicator";
 
-    typing.className="typing-indicator";
+  typing.id = "typing";
 
-    typing.id="typing";
-
-    typing.innerHTML=`
+  typing.innerHTML = `
 
         <div class="dot"></div>
 
@@ -476,154 +510,123 @@ function showTyping(){
 
     `;
 
-    chatBox.appendChild(typing);
+  chatBox.appendChild(typing);
 
-    scrollBottom();
-
+  scrollBottom();
 }
 
-function removeTyping(){
+function removeTyping() {
+  const typing = document.getElementById("typing");
 
-    const typing=document.getElementById("typing");
-
-    if(typing){
-
-        typing.remove();
-
-    }
-
+  if (typing) {
+    typing.remove();
+  }
 }
 
 /* ==========================================
         AUTO SCROLL
 ========================================== */
 
-function scrollBottom(){
+function scrollBottom() {
+  setTimeout(() => {
+    chatBox.scrollTo({
+      top: chatBox.scrollHeight,
 
-    setTimeout(()=>{
-
-        chatBox.scrollTo({
-
-            top:chatBox.scrollHeight,
-
-            behavior:"smooth"
-
-        });
-
-    },100);
-
+      behavior: "smooth",
+    });
+  }, 100);
 }
 
 /* ==========================================
       BUTTON CLICK
 ========================================== */
 
-sendBtn.addEventListener("click",()=>{
-
+if (sendBtn) {
+  sendBtn.addEventListener("click", () => {
     sendMessage();
-
-});
+  });
+}
 
 /* ==========================================
         ENTER KEY
 ========================================== */
 
-userInput.addEventListener("keydown",(e)=>{
+userInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
 
-    if(e.key==="Enter"){
-
-        e.preventDefault();
-
-        sendMessage();
-
-    }
-
+    sendMessage();
+  }
 });
 
 /* ==========================================
       QUICK SUGGESTION CLICK
 ========================================== */
 
-function handleSuggestionClick(text){
-
-    sendMessage(text);
-
+function handleSuggestionClick(text) {
+  sendMessage(text);
 }
 
-window.handleSuggestionClick=handleSuggestionClick;
+window.handleSuggestionClick = handleSuggestionClick;
 
 /* ==========================================
         AUTO FOCUS
 ========================================== */
 
-window.addEventListener("load",()=>{
-
-    userInput.focus();
-
+window.addEventListener("load", () => {
+  userInput.focus();
 });
 
 /* ==========================================
       BUTTON ANIMATION
 ========================================== */
 
-sendBtn.addEventListener("mousedown",()=>{
+/* ==========================================
+      BUTTON ANIMATION
+========================================== */
 
-    sendBtn.style.transform="scale(.90)";
+if (sendBtn) {
+  sendBtn.addEventListener("mousedown", () => {
+    sendBtn.style.transform = "scale(.90)";
+  });
 
-});
+  sendBtn.addEventListener("mouseup", () => {
+    sendBtn.style.transform = "scale(1)";
+  });
 
-sendBtn.addEventListener("mouseup",()=>{
-
-    sendBtn.style.transform="scale(1)";
-
-});
-
-sendBtn.addEventListener("mouseleave",()=>{
-
-    sendBtn.style.transform="scale(1)";
-
-});
+  sendBtn.addEventListener("mouseleave", () => {
+    sendBtn.style.transform = "scale(1)";
+  });
+}
 
 /* ==========================================
       INPUT PLACEHOLDER ANIMATION
 ========================================== */
 
-const placeholders=[
+const placeholders = [
+  "Ask about Skills...",
 
-"Ask about Skills...",
+  "Ask about Projects...",
 
-"Ask about Projects...",
+  "Ask about Experience...",
 
-"Ask about Experience...",
+  "Ask about Education...",
 
-"Ask about Education...",
-
-"Ask anything..."
-
+  "Ask anything...",
 ];
 
-let index=0;
+let index = 0;
 
-setInterval(()=>{
+setInterval(() => {
+  userInput.setAttribute(
+    "placeholder",
 
-    userInput.setAttribute(
+    placeholders[index],
+  );
 
-        "placeholder",
+  index++;
 
-        placeholders[index]
-
-    );
-
-    index++;
-
-    if(index>=placeholders.length){
-
-        index=0;
-
-    }
-
-},2500);
-
-/* ==========================================
-        END
-========================================== */
+  if (index >= placeholders.length) {
+    index = 0;
+  }
+}, 2500);

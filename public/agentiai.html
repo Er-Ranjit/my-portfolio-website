@@ -1,206 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranjit AI Assistant</title>
-
-    <link rel="stylesheet" href="agenti.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-</head>
-
-<body>
-
-<div class="bg-blur blur1"></div>
-<div class="bg-blur blur2"></div>
-
-<div class="container">
-
-<div class="chat-card">
-
-<!-- ================= HEADER ================= -->
-
-<div class="header">
-
-<div class="header-left">
-
-<a href="index.html" class="back-home-btn">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-</a>
-
-<div class="ai-avatar">
-
-<i class="fa-solid fa-robot"></i>
-
-</div>
-
-<div class="header-info">
-
-<h2>Ranjit AI Assistant</h2>
-
-<p>Powered by AI • Portfolio Assistant</p>
-
-</div>
-
-</div>
-
-<div class="status">
-
-<span class="status-dot"></span>
-
-Online
-
-</div>
-
-</div>
-
-<!-- ================= CHAT ================= -->
-
-<div id="chatBox" class="chat-box">
-
-<div class="bot-message animate-fade-in">
-
-<div class="welcome-card">
-
-<div class="welcome-icon">
-
-🤖
-
-</div>
-
-<h2>Hello Developer 👋</h2>
-
-<p>
-
-I'm your personal AI Assistant.
-
-Ask me anything about
-
-Ranjit's Portfolio.
-
-</p>
-
-</div>
-
-<div class="suggestion-title">
-
-Quick Questions
-
-</div>
-
-<div class="suggestions">
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('Tell me about your Skills')">
-
-<i class="fa-solid fa-code"></i>
-
-<span>Skills</span>
-
-</div>
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('Show me your Projects')">
-
-<i class="fa-solid fa-laptop-code"></i>
-
-<span>Projects</span>
-
-</div>
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('Tell me about your Experience')">
-
-<i class="fa-solid fa-briefcase"></i>
-
-<span>Experience</span>
-
-</div>
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('Tell me about your Education')">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
-<span>Education</span>
-
-</div>
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('Show me your Resume')">
-
-<i class="fa-solid fa-file"></i>
-
-<span>Resume</span>
-
-</div>
-
-<div class="suggestion-card"
-
-onclick="handleSuggestionClick('How can I contact you?')">
-
-<i class="fa-solid fa-envelope"></i>
-
-<span>Contact</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================= INPUT ================= -->
-
-<div class="input-area">
-
-<input
-
-type="text"
-
-id="userMessage"
-
-placeholder="Ask anything about Ranjit...">
-
-<button id="sendBtn">
-
-<i class="fa-solid fa-paper-plane"></i>
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-
+    <link rel="stylesheet" href="agenti.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="/images/ranjitphp.jpeg" type="image/x-icon">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="bg-blur blur1"></div>
+    <div class="bg-blur blur2"></div>
+
+    <div class="container">
+      <div class="chat-card">
+        <!-- ================= HEADER ================= -->
+
+        <div class="header">
+          <div class="header-left">
+            <a href="index.html" class="back-home-btn">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <div class="ai-avatar">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="header-info">
+              <h2>Ranjit AI Assistant</h2>
+              <p>Powered by AI • Portfolio Assistant</p>
+            </div>
+          </div>
+
+          <div class="status">
+            <span class="status-dot"></span>
+
+            Online
+          </div>
+        </div>
+
+        <!-- ================= CHAT ================= -->
+
+        <div id="chatBox" class="chat-box">
+          <div class="bot-message animate-fade-in">
+            <div class="welcome-card">
+              <div class="welcome-icon">🤖</div>
+
+              <h2>Hello Developer 👋</h2>
+
+              <p>
+                I'm your personal AI Assistant. Ask me anything about Ranjit's
+                Portfolio.
+              </p>
+            </div>
+
+            <div class="suggestion-title">Quick Questions</div>
+
+            <div class="suggestions">
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('Tell me about your Skills')"
+              >
+                <i class="fa-solid fa-code"></i>
+
+                <span>Skills</span>
+              </div>
+
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('Show me your Projects')"
+              >
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <span>Projects</span>
+              </div>
+
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('Tell me about your Experience')"
+              >
+                <i class="fa-solid fa-briefcase"></i>
+
+                <span>Experience</span>
+              </div>
+
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('Tell me about your Education')"
+              >
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>Education</span>
+              </div>
+
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('Show me your Resume')"
+              >
+                <i class="fa-solid fa-file"></i>
+
+                <span>Resume</span>
+              </div>
+
+              <div
+                class="suggestion-card"
+                onclick="handleSuggestionClick('How can I contact you?')"
+              >
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>Contact</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= INPUT ================= -->
+
+        <div class="input-area">
+          <input
+            type="text"
+            id="userMessage"
+            placeholder="Ask anything about Ranjit..."
+          />
+
+          <button id="sendBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,766 +1,1308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Ranjit Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-    <link rel="shortcut icon" href="/images/ranjitphp.jpeg" type="image/x-icon">
-</head>
-<body>
-    <div class="blob-container">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-</div>
-
-    <div id="particles-js"></div>
-
-<!--==========================
+    <link
+      rel="shortcut icon"
+      href="/images/ranjitphp.jpeg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!--==========================
         PREMIUM NAVBAR
 ===========================-->
 
-<header class="header">
-
-    <!-- Logo -->
-    <a href="#homepage" class="logo">
-
-        <div class="logo-icon">
-            RK
-        </div>
+    <header class="header">
+      <!-- Logo -->
+      <a href="#homepage" class="logo">
+        <div class="logo-icon">RK</div>
 
         <div class="logo-content">
-            <h2>Ranjit Kumar</h2>
+          <h2>Ranjit Kumar</h2>
         </div>
+      </a>
 
-    </a>
-
-    <!-- Desktop Navigation -->
-    <nav class="navbar">
-
+      <!-- Desktop Navigation -->
+      <nav class="navbar">
         <ul class="nav-links">
+          <li>
+            <a href="#homepage" class="active">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="#homepage" class="active">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Home</span>
-                </a>
-            </li>
+          <li>
+            <a href="#aboutpage">
+              <i class="fa-solid fa-user"></i>
+              <span>About</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="#aboutpage">
-                    <i class="fa-solid fa-user"></i>
-                    <span>About</span>
-                </a>
-            </li>
+          <li>
+            <a href="#skillspage">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="#skillspage">
-                    <i class="fa-solid fa-code"></i>
-                    <span>Skills</span>
-                </a>
-            </li>
+          <li>
+            <a href="#projectspage">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>Projects</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="#projectspage">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <span>Projects</span>
-                </a>
-            </li>
+          <li>
+            <a href="#experiencepage">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="#experiencepage">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <span>Experience</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#contactpage">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Contact</span>
-                </a>
-            </li>
-
+          <li>
+            <a href="#contactpage">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </li>
         </ul>
-
-    </nav>
-
-    <!-- Right Side -->
-    <div class="nav-right">
-
-        <!-- Desktop AI Button -->
-        <a href="/agentiai.html" class="ai-btn desktop-ai">
-
-            <i class="fa-solid fa-robot"></i>
-
-            <span>My AI Assistant</span>
-
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <div class="menu-toggle" id="mobile-menu">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-</header>
-
-<!--==========================
-      MOBILE MENU
-===========================-->
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="#homepage">
-        <i class="fa-solid fa-house"></i>
-        Home
-    </a>
-
-    <a href="#aboutpage">
-        <i class="fa-solid fa-user"></i>
-        About
-    </a>
-
-    <a href="#skillspage">
-        <i class="fa-solid fa-code"></i>
-        Skills
-    </a>
-
-    <a href="#projectspage">
-        <i class="fa-solid fa-laptop-code"></i>
-        Projects
-    </a>
-
-    <a href="#experiencepage">
-        <i class="fa-solid fa-briefcase"></i>
-        Experience
-    </a>
-
-    <a href="#contactpage">
-        <i class="fa-solid fa-envelope"></i>
-        Contact
-    </a>
-
-    <div class="mobile-divider"></div>
-
-    <a href="/agentiai.html" class="ai-btn mobile-ai">
-
+      </nav>
+      <!-- Desktop AI Button -->
+      <a href="/agentiai.html" class="ai-btn desktop-ai">
         <i class="fa-solid fa-robot"></i>
 
         <span>My AI Assistant</span>
+      </a>
+      <!-- Right Side -->
+      <div class="nav-right">
+        <!-- Mobile Menu Button -->
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
 
-    </a>
+    <!--==========================
+      MOBILE MENU
+===========================-->
 
-</div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#homepage">
+        <i class="fa-solid fa-house"></i>
+        Home
+      </a>
 
+      <a href="#aboutpage">
+        <i class="fa-solid fa-user"></i>
+        About
+      </a>
 
-    
+      <a href="#skillspage">
+        <i class="fa-solid fa-code"></i>
+        Skills
+      </a>
+
+      <a href="#projectspage">
+        <i class="fa-solid fa-laptop-code"></i>
+        Projects
+      </a>
+
+      <a href="#experiencepage">
+        <i class="fa-solid fa-briefcase"></i>
+        Experience
+      </a>
+
+      <a href="#contactpage">
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+      </a>
+
+      <div class="mobile-divider"></div>
+
+      <a href="/agentiai.html" class="ai-btn mobile-ai">
+        <i class="fa-solid fa-robot"></i>
+
+        <span>My AI Assistant</span>
+      </a>
+    </div>
 
     <section class="hero" id="homepage">
-        <div class="hero-container">
+      <!-- Ambient Background Dynamics -->
+      <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
 
-            <div class="hero-content" data-aos="fade-right">
-                <p class="hello">👋 Hello, I'm</p>
-                <h1>Ranjit <span>Kumar</span></h1>
-                <h2>I am a <span id="typing-text"></span></h2>
-                
-                <p class="description">
-                    I build responsive, high-performance and scalable web applications that deliver real-world solutions.
-                </p>
+      <div id="particles-js"></div>
+      <canvas id="cyber-matrix-canvas"></canvas>
 
-                <div class="hero-buttons">
-                    <a href="/pdfs/ranjit kumar resume update.pdf" download="Ranjit_Kumar_CV.pdf" class="btn primary">
-                        Download CV <i class="fas fa-download"></i></a>
-                    <a href="#contactpage" class="btn secondary">Contact Me</a>
-                </div>
+      <div class="hero-container">
+        <div class="hero-content" data-aos="fade-right">
+          <!-- Modernized Tech Matte Badge -->
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span class="badge-text"
+              >Available for Freelance & Full-time Roles</span
+            >
+          </div>
 
-                <div class="tech-stack">
-                    <h3><i class="fas fa-code"></i> Tech Stack</h3>
-                    <div class="skills">
-                        <div class="skill-card mongodb"><i class="fas fa-leaf"></i> <span>MongoDB</span></div>
-                        <div class="skill-card express"><i class="fas fa-server"></i> <span>Express</span></div>
-                        <div class="skill-card react"><i class="fab fa-react"></i> <span>React</span></div>
-                        <div class="skill-card node"><i class="fab fa-node-js"></i> <span>Node.js</span></div>
-                        <div class="skill-card php"><i class="fab fa-php"></i> <span>PHP</span></div>
-                        <div class="skill-card mysql"><i class="fas fa-database"></i> <span>MySQL</span></div>
-                    </div>
-                </div>
+          <p class="hello">👋 Hello, I'm</p>
+          <h1 class="main-title">
+            Ranjit <span class="gradient-text">Kumar</span>
+          </h1>
+          <h2 class="sub-title">I am a <span id="typing-text"></span></h2>
+
+          <p class="description">
+            I build responsive, high-performance and scalable web applications
+            that deliver real-world solutions.
+          </p>
+
+          <div class="hero-buttons">
+            <a
+              href="/pdfs/ranjit kumar resume update.pdf"
+              download="Ranjit_Kumar_CV.pdf"
+              class="btn primary"
+            >
+              <span>Download CV</span>
+              <i class="fas fa-download"></i>
+            </a>
+            <a href="#contactpage" class="btn secondary">
+              <span>Contact Me</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="tech-stack">
+            <h3 class="stack-title"><i class="fas fa-code"></i> Tech Stack</h3>
+            <div class="skills">
+              <div class="skill-card mongodb">
+                <i class="fas fa-leaf"></i> <span>MongoDB</span>
+              </div>
+              <div class="skill-card express">
+                <i class="fas fa-server"></i> <span>Express</span>
+              </div>
+              <div class="skill-card react">
+                <i class="fab fa-react"></i> <span>React</span>
+              </div>
+              <div class="skill-card node">
+                <i class="fab fa-node-js"></i> <span>Node.js</span>
+              </div>
+              <div class="skill-card php">
+                <i class="fab fa-php"></i> <span>PHP</span>
+              </div>
+              <div class="skill-card mysql">
+                <i class="fas fa-database"></i> <span>MySQL</span>
+              </div>
             </div>
-
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
-                <div class="glow-ring"></div>
-                <div class="circle">
-                    <img src="/images/ranjit.jpeg" alt="Ranjit Kumar" onerror="this.src='https://unsplash.com'">
-                </div>
-            </div>
-
+          </div>
         </div>
 
-        <div class="stats" data-aos="fade-up" data-aos-delay="400">
-            <div class="box"><i class="fas fa-rocket"></i><h3>10+</h3><p>Projects Completed</p></div>
-            <div class="box"><i class="fas fa-code"></i><h3>Fresher</h3><p>Years of Experience</p></div>
-            <div class="box"><i class="fas fa-user"></i><h3>100%</h3><p>Client Satisfaction</p></div>
-            <div class="box"><i class="far fa-clock"></i><h3>500+</h3><p>Hours of Coding</p></div>
+        <!-- Premium Morphing Portrait Frame -->
+        <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+          <div class="image-wrapper">
+            <div class="glow-ring"></div>
+            <div class="circle">
+              <img
+                src="/images/ranjit.jpeg"
+                alt="Ranjit Kumar"
+                onerror="this.src = 'https://unsplash.com'"
+              />
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Stats Grid Layout -->
+      <div class="stats" data-aos="fade-up" data-aos-delay="400">
+        <div class="box">
+          <div class="box-icon"><i class="fas fa-rocket"></i></div>
+          <div class="box-info">
+            <h3 class="stat-number">10+</h3>
+            <p class="stat-label">Projects Completed</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-icon"><i class="fas fa-code"></i></div>
+          <div class="box-info">
+            <h3 class="stat-number">Fresher</h3>
+            <p class="stat-label">Experience</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-icon"><i class="fas fa-user"></i></div>
+          <div class="box-info">
+            <h3 class="stat-number">100%</h3>
+            <p class="stat-label">Satisfaction</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-icon"><i class="far fa-clock"></i></div>
+          <div class="box-info">
+            <h3 class="stat-number">500+</h3>
+            <p class="stat-label">Coding Hours</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="about" id="aboutpage" data-aos="fade-up">
-    <div class="about-container">
-        
-        <!-- Left Side: Profile Image with Floating Skill Rings -->
+      <div class="about-container">
+        <!-- Left Side: Profile Image with All 9 Moving Icons -->
         <div class="about-image-wrapper">
-            <div class="profile-glow-circle"></div>
-            <div class="main-profile-pic">
-                <img src="/images/ranjit.jpeg" alt="Ranjit Kumar" onerror="this.src='https://unsplash.com'">
+          <div class="profile-glow-circle"></div>
+          <div class="main-profile-pic">
+            <img
+              src="/images/ranjit.jpeg"
+              alt="Ranjit Kumar"
+              onerror="this.src = 'https://unsplash.com'"
+            />
+          </div>
+
+          <!-- Continuous Moving Orbital Track -->
+          <div class="orbit-container">
+            <div class="orbit-icon icon-1" title="React">
+              <i class="fab fa-react"></i>
             </div>
-            
-            <!-- Orbiting Tech Icons around Image -->
-            <div class="orbit-container">
-        <div class="orbit-icon icon-1"><i class="fab fa-react"></i></div>
-        <div class="orbit-icon icon-2"><i class="fab fa-node-js"></i></div>
-        <div class="orbit-icon icon-3"><i class="fab fa-js-square"></i></div>
-        <div class="orbit-icon icon-4"><i class="fas fa-leaf"></i></div>
-        <div class="orbit-icon icon-5"><i class="fab fa-html5"></i></div>
-        <div class="orbit-icon icon-6"><i class="fab fa-python"></i></div>
-        
-        
-    </div>
+            <div class="orbit-icon icon-2" title="Node.js">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="orbit-icon icon-3" title="JavaScript">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <div class="orbit-icon icon-4" title="MongoDB">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="orbit-icon icon-5" title="HTML5">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="orbit-icon icon-6" title="PHP">
+              <i class="fab fa-php"></i>
+            </div>
+            <div class="orbit-icon icon-7" title="Laravel">
+              <i class="fab fa-laravel"></i>
+            </div>
+            <div class="orbit-icon icon-8" title="MySQL">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="orbit-icon icon-9" title="Agentic AI">
+              <i class="fas fa-robot"></i>
+            </div>
+          </div>
         </div>
 
-        <!-- Right Side: Content & Quick Highlight Cards -->
+        <!-- Right Side: Content & Highlight Cards -->
         <div class="about-content">
-            <p class="section-tag">ABOUT ME</p>
-            <h2 class="about-name">Ranjit Kumar</h2>
-            <h3 class="about-subtitle">Full Stack Developer</h3>
-            
-            <p class="about-description">
-                Hi, I'm Ranjit Kumar, a passionate Full Stack Developer with knowledge of MERN Stack and PHP development. I am currently pursuing B.Tech in Computer Science Engineering and undergoing professional training at Sortiq Solutions Private Limited, Mohali, Punjab. I have experience working with HTML, CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, PHP, and MySQL. I enjoy building responsive and user-friendly web applications and continuously improving my technical skills.
-               </p>
+          <p class="section-tag">ABOUT ME</p>
+          <h2 class="about-name">Ranjit Kumar</h2>
+          <h3 class="about-subtitle">Full Stack Developer</h3>
 
-            <!-- Grid Blocks for Quick Stats -->
-            <div class="about-grid">
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-briefcase"></i></div>
-                    <div class="card-info">
-                        <h4>Experience</h4>
-                        <p>Fresher</p>
-                    </div>
-                </div>
+          <p class="about-description">
+            Hi, I'm Ranjit Kumar, a passionate Full Stack Developer with
+            knowledge of MERN Stack and PHP development. I am currently pursuing
+            B.Tech in Computer Science Engineering and undergoing professional
+            training at Sortiq Solutions Private Limited, Mohali, Punjab. I have
+            experience working with HTML, CSS, JavaScript, React.js, Node.js,
+            Express.js, MongoDB, PHP, and MySQL. I enjoy building responsive and
+            user-friendly web applications and continuously improving my
+            technical skills.
+          </p>
 
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="card-info">
-                        <h4>Speciality</h4>
-                        <p>Full Stack</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-                    <div class="card-info">
-                        <h4>Focus</h4>
-                        <p>Development</p>
-                    </div>
-                </div>
+          <div class="about-grid">
+            <div class="info-card">
+              <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+              <div class="card-info">
+                <h4>Experience</h4>
+                <p>Fresher</p>
+              </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="about-buttons">
-                <a href="https://github.com/Er-Ranjit" class="btn primary btn-icon-move">View Projects <i class="fas fa-arrow-right"></i></a>
-                <a href="https://www.linkedin.com/in/ranjit-kumar-5072b033b" class="btn btn-outline">Get In Touch <i class="far fa-paper-plane"></i></a>
+            <div class="info-card">
+              <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+              <div class="card-info">
+                <h4>Speciality</h4>
+                <p>Full Stack</p>
+              </div>
             </div>
+
+            <div class="info-card">
+              <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="card-info">
+                <h4>Focus</h4>
+                <p>Development</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-buttons">
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="btn primary btn-icon-move"
+            >
+              <span>View Projects</span> <i class="fas fa-arrow-right"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              class="btn secondary"
+            >
+              <span>Get In Touch</span> <i class="far fa-paper-plane"></i>
+            </a>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<section class="skills-section" id="skillspage" data-aos="fade-up">
-    <div class="skills-header">
+    <section class="skills-section" id="skillspage" data-aos="fade-up">
+      <div class="skills-header">
         <p class="section-tag">WHAT I WORK WITH</p>
         <h2 class="skills-title">Skills & <span>Technologies</span></h2>
-        <p class="skills-subtitle">A curated set of tools I use to build modern, scalable, and performant web applications</p>
-    </div>
+        <p class="skills-subtitle">
+          A curated set of tools I use to build modern, scalable, and performant
+          web applications
+        </p>
+      </div>
 
-    <!-- MAIN TRACK SLIDER WRAPPER -->
-    <div class="skills-slider-wrapper">
+      <!-- MAIN TRACK SLIDER WRAPPER -->
+      <div class="skills-slider-wrapper">
         <!-- Loop Track 1: Moving Left -->
         <div class="skills-track move-left">
-            <!-- Row 1: Original Skill Cards -->
-            <div class="skill-grid-card html"><div class="skill-icon-box"><i class="fab fa-html5"></i></div><div class="skill-meta"><h4>HTML5</h4><p>Structure</p></div></div>
-            <div class="skill-grid-card css"><div class="skill-icon-box"><i class="fab fa-css3-alt"></i></div><div class="skill-meta"><h4>CSS3</h4><p>Modern Layouts</p></div></div>
-            <div class="skill-grid-card javascript"><div class="skill-icon-box"><i class="fab fa-js-square"></i></div><div class="skill-meta"><h4>JavaScript</h4><p>ES6+ Logic</p></div></div>
-            <div class="skill-grid-card bootstrap"><div class="skill-icon-box"><i class="fab fa-bootstrap"></i></div><div class="skill-meta"><h4>Bootstrap</h4><p>Framework</p></div></div>
-            <div class="skill-grid-card react"><div class="skill-icon-box"><i class="fab fa-react"></i></div><div class="skill-meta"><h4>React</h4><p>SPA Components</p></div></div>
-            <div class="skill-grid-card node"><div class="skill-icon-box"><i class="fab fa-node-js"></i></div><div class="skill-meta"><h4>Node.js</h4><p>Server Runtime</p></div></div>
-            <div class="skill-grid-card express"><div class="skill-icon-box"><i class="fas fa-server"></i></div><div class="skill-meta"><h4>Express.js</h4><p>REST APIs</p></div></div>
-            
-            <!-- Duplicated Cards for Seamless Infinite Loop Visuals -->
-            <div class="skill-grid-card html"><div class="skill-icon-box"><i class="fab fa-html5"></i></div><div class="skill-meta"><h4>HTML5</h4><p>Structure</p></div></div>
-            <div class="skill-grid-card css"><div class="skill-icon-box"><i class="fab fa-css3-alt"></i></div><div class="skill-meta"><h4>CSS3</h4><p>Modern Layouts</p></div></div>
-            <div class="skill-grid-card javascript"><div class="skill-icon-box"><i class="fab fa-js-square"></i></div><div class="skill-meta"><h4>JavaScript</h4><p>ES6+ Logic</p></div></div>
-            <div class="skill-grid-card bootstrap"><div class="skill-icon-box"><i class="fab fa-bootstrap"></i></div><div class="skill-meta"><h4>Bootstrap</h4><p>Framework</p></div></div>
-            <div class="skill-grid-card react"><div class="skill-icon-box"><i class="fab fa-react"></i></div><div class="skill-meta"><h4>React</h4><p>SPA Components</p></div></div>
-            <div class="skill-grid-card node"><div class="skill-icon-box"><i class="fab fa-node-js"></i></div><div class="skill-meta"><h4>Node.js</h4><p>Server Runtime</p></div></div>
-            <div class="skill-grid-card express"><div class="skill-icon-box"><i class="fas fa-server"></i></div><div class="skill-meta"><h4>Express.js</h4><p>REST APIs</p></div></div>
+          <!-- Row 1: Original Skill Cards -->
+          <div class="skill-grid-card html">
+            <div class="skill-icon-box"><i class="fab fa-html5"></i></div>
+            <div class="skill-meta">
+              <h4>HTML5</h4>
+              <p>Structure</p>
+            </div>
+          </div>
+          <div class="skill-grid-card css">
+            <div class="skill-icon-box"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-meta">
+              <h4>CSS3</h4>
+              <p>Modern Layouts</p>
+            </div>
+          </div>
+          <div class="skill-grid-card javascript">
+            <div class="skill-icon-box"><i class="fab fa-js-square"></i></div>
+            <div class="skill-meta">
+              <h4>JavaScript</h4>
+              <p>ES6+ Logic</p>
+            </div>
+          </div>
+          <div class="skill-grid-card bootstrap">
+            <div class="skill-icon-box"><i class="fab fa-bootstrap"></i></div>
+            <div class="skill-meta">
+              <h4>Bootstrap</h4>
+              <p>Framework</p>
+            </div>
+          </div>
+          <div class="skill-grid-card react">
+            <div class="skill-icon-box"><i class="fab fa-react"></i></div>
+            <div class="skill-meta">
+              <h4>React</h4>
+              <p>SPA Components</p>
+            </div>
+          </div>
+          <div class="skill-grid-card node">
+            <div class="skill-icon-box"><i class="fab fa-node-js"></i></div>
+            <div class="skill-meta">
+              <h4>Node.js</h4>
+              <p>Server Runtime</p>
+            </div>
+          </div>
+          <div class="skill-grid-card express">
+            <div class="skill-icon-box"><i class="fas fa-server"></i></div>
+            <div class="skill-meta">
+              <h4>Express.js</h4>
+              <p>REST APIs</p>
+            </div>
+          </div>
+
+          <!-- Duplicated Cards for Seamless Infinite Loop Visuals -->
+          <div class="skill-grid-card html">
+            <div class="skill-icon-box"><i class="fab fa-html5"></i></div>
+            <div class="skill-meta">
+              <h4>HTML5</h4>
+              <p>Structure</p>
+            </div>
+          </div>
+          <div class="skill-grid-card css">
+            <div class="skill-icon-box"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-meta">
+              <h4>CSS3</h4>
+              <p>Modern Layouts</p>
+            </div>
+          </div>
+          <div class="skill-grid-card javascript">
+            <div class="skill-icon-box"><i class="fab fa-js-square"></i></div>
+            <div class="skill-meta">
+              <h4>JavaScript</h4>
+              <p>ES6+ Logic</p>
+            </div>
+          </div>
+          <div class="skill-grid-card bootstrap">
+            <div class="skill-icon-box"><i class="fab fa-bootstrap"></i></div>
+            <div class="skill-meta">
+              <h4>Bootstrap</h4>
+              <p>Framework</p>
+            </div>
+          </div>
+          <div class="skill-grid-card react">
+            <div class="skill-icon-box"><i class="fab fa-react"></i></div>
+            <div class="skill-meta">
+              <h4>React</h4>
+              <p>SPA Components</p>
+            </div>
+          </div>
+          <div class="skill-grid-card node">
+            <div class="skill-icon-box"><i class="fab fa-node-js"></i></div>
+            <div class="skill-meta">
+              <h4>Node.js</h4>
+              <p>Server Runtime</p>
+            </div>
+          </div>
+          <div class="skill-grid-card express">
+            <div class="skill-icon-box"><i class="fas fa-server"></i></div>
+            <div class="skill-meta">
+              <h4>Express.js</h4>
+              <p>REST APIs</p>
+            </div>
+          </div>
         </div>
 
         <!-- Loop Track 2: Moving Right (For visual variety) -->
         <div class="skills-track move-right">
-            <!-- Row 2: Remaining Skill Cards -->
-            <div class="skill-grid-card php"><div class="skill-icon-box"><i class="fab fa-php"></i></div><div class="skill-meta"><h4>PHP</h4><p>Scripting Engine</p></div></div>
-            <div class="skill-grid-card laravel"><div class="skill-icon-box"><i class="fab fa-laravel"></i></div><div class="skill-meta"><h4>Laravel</h4><p>MVC Framework</p></div></div>
-            <div class="skill-grid-card mongodb"><div class="skill-icon-box"><i class="fas fa-leaf"></i></div><div class="skill-meta"><h4>MongoDB</h4><p>NoSQL Layer</p></div></div>
-            <div class="skill-grid-card mysql"><div class="skill-icon-box"><i class="fas fa-database"></i></div><div class="skill-meta"><h4>MySQL</h4><p>Relational Data</p></div></div>
-            <div class="skill-grid-card excel"><div class="skill-icon-box"><i class="far fa-file-excel"></i></div><div class="skill-meta"><h4>MS Excel</h4><p>Data Analysis</p></div></div>
-            <div class="skill-grid-card word"><div class="skill-icon-box"><i class="far fa-file-word"></i></div><div class="skill-meta"><h4>MS Word</h4><p>Documentation</p></div></div>
-            <div class="skill-grid-card powerpoint"><div class="skill-icon-box"><i class="far fa-file-powerpoint"></i></div><div class="skill-meta"><h4>PowerPoint</h4><p>Presentation</p></div></div>
+          <!-- Row 2: Remaining Skill Cards -->
+          <div class="skill-grid-card php">
+            <div class="skill-icon-box"><i class="fab fa-php"></i></div>
+            <div class="skill-meta">
+              <h4>PHP</h4>
+              <p>Scripting Engine</p>
+            </div>
+          </div>
+          <div class="skill-grid-card laravel">
+            <div class="skill-icon-box"><i class="fab fa-laravel"></i></div>
+            <div class="skill-meta">
+              <h4>Laravel</h4>
+              <p>MVC Framework</p>
+            </div>
+          </div>
+          <div class="skill-grid-card mongodb">
+            <div class="skill-icon-box"><i class="fas fa-leaf"></i></div>
+            <div class="skill-meta">
+              <h4>MongoDB</h4>
+              <p>NoSQL Layer</p>
+            </div>
+          </div>
+          <div class="skill-grid-card mysql">
+            <div class="skill-icon-box"><i class="fas fa-database"></i></div>
+            <div class="skill-meta">
+              <h4>MySQL</h4>
+              <p>Relational Data</p>
+            </div>
+          </div>
+          <div class="skill-grid-card excel">
+            <div class="skill-icon-box"><i class="far fa-file-excel"></i></div>
+            <div class="skill-meta">
+              <h4>MS Excel</h4>
+              <p>Data Analysis</p>
+            </div>
+          </div>
+          <div class="skill-grid-card word">
+            <div class="skill-icon-box"><i class="far fa-file-word"></i></div>
+            <div class="skill-meta">
+              <h4>MS Word</h4>
+              <p>Documentation</p>
+            </div>
+          </div>
+          <div class="skill-grid-card powerpoint">
+            <div class="skill-icon-box">
+              <i class="far fa-file-powerpoint"></i>
+            </div>
+            <div class="skill-meta">
+              <h4>PowerPoint</h4>
+              <p>Presentation</p>
+            </div>
+          </div>
 
-            <!-- Duplicated Cards for Seamless Infinite Loop Visuals -->
-            <div class="skill-grid-card php"><div class="skill-icon-box"><i class="fab fa-php"></i></div><div class="skill-meta"><h4>PHP</h4><p>Scripting Engine</p></div></div>
-            <div class="skill-grid-card laravel"><div class="skill-icon-box"><i class="fab fa-laravel"></i></div><div class="skill-meta"><h4>Laravel</h4><p>MVC Framework</p></div></div>
-            <div class="skill-grid-card mongodb"><div class="skill-icon-box"><i class="fas fa-leaf"></i></div><div class="skill-meta"><h4>MongoDB</h4><p>NoSQL Layer</p></div></div>
-            <div class="skill-grid-card mysql"><div class="skill-icon-box"><i class="fas fa-database"></i></div><div class="skill-meta"><h4>MySQL</h4><p>Relational Data</p></div></div>
-            <div class="skill-grid-card excel"><div class="skill-icon-box"><i class="far fa-file-excel"></i></div><div class="skill-meta"><h4>MS Excel</h4><p>Data Analysis</p></div></div>
-            <div class="skill-grid-card word"><div class="skill-icon-box"><i class="far fa-file-word"></i></div><div class="skill-meta"><h4>MS Word</h4><p>Documentation</p></div></div>
-            <div class="skill-grid-card powerpoint"><div class="skill-icon-box"><i class="far fa-file-powerpoint"></i></div><div class="skill-meta"><h4>PowerPoint</h4><p>Presentation</p></div></div>
+          <!-- Duplicated Cards for Seamless Infinite Loop Visuals -->
+          <div class="skill-grid-card php">
+            <div class="skill-icon-box"><i class="fab fa-php"></i></div>
+            <div class="skill-meta">
+              <h4>PHP</h4>
+              <p>Scripting Engine</p>
+            </div>
+          </div>
+          <div class="skill-grid-card laravel">
+            <div class="skill-icon-box"><i class="fab fa-laravel"></i></div>
+            <div class="skill-meta">
+              <h4>Laravel</h4>
+              <p>MVC Framework</p>
+            </div>
+          </div>
+          <div class="skill-grid-card mongodb">
+            <div class="skill-icon-box"><i class="fas fa-leaf"></i></div>
+            <div class="skill-meta">
+              <h4>MongoDB</h4>
+              <p>NoSQL Layer</p>
+            </div>
+          </div>
+          <div class="skill-grid-card mysql">
+            <div class="skill-icon-box"><i class="fas fa-database"></i></div>
+            <div class="skill-meta">
+              <h4>MySQL</h4>
+              <p>Relational Data</p>
+            </div>
+          </div>
+          <div class="skill-grid-card excel">
+            <div class="skill-icon-box"><i class="far fa-file-excel"></i></div>
+            <div class="skill-meta">
+              <h4>MS Excel</h4>
+              <p>Data Analysis</p>
+            </div>
+          </div>
+          <div class="skill-grid-card word">
+            <div class="skill-icon-box"><i class="far fa-file-word"></i></div>
+            <div class="skill-meta">
+              <h4>MS Word</h4>
+              <p>Documentation</p>
+            </div>
+          </div>
+          <div class="skill-grid-card powerpoint">
+            <div class="skill-icon-box">
+              <i class="far fa-file-powerpoint"></i>
+            </div>
+            <div class="skill-meta">
+              <h4>PowerPoint</h4>
+              <p>Presentation</p>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Bottom Counter Footer Layout remains same -->
-    <div class="skills-summary-footer">
-        <div class="summary-box"><h3>14+</h3><p>Technologies</p></div>
-        <div class="summary-box"><h3>10+</h3><p>Projects Shipped</p></div>
-        <div class="summary-box"><h3>Fresher</h3><p>Years Experience</p></div>
-    </div>
-</section>
+      <!-- Bottom Counter Footer Layout remains same -->
+      <div class="skills-summary-footer">
+        <div class="summary-box">
+          <h3>14+</h3>
+          <p>Technologies</p>
+        </div>
+        <div class="summary-box">
+          <h3>10+</h3>
+          <p>Projects Shipped</p>
+        </div>
+        <div class="summary-box">
+          <h3>Fresher</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </section>
 
-<section class="projects-section" id="projectspage" data-aos="fade-up">
-    <div class="projects-header">
+    <section class="projects-section" id="projectspage" data-aos="fade-up">
+      <div class="projects-header">
         <p class="section-tag">MY RECENT WORK</p>
-        <h2 class="projects-title">Featured <span>Projects</span></h2>
-        <p class="projects-subtitle">A collection of web applications built with clean architecture, robust backends, and beautiful user interfaces.</p>
-        
+        <h2 class="projects-title">
+          Featured <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="projects-subtitle">
+          A collection of web applications built with clean architecture, robust
+          backends, and beautiful user interfaces.
+        </p>
+
         <!-- Premium Project Filter Tabs -->
         <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-            <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
         </div>
-    </div>
+      </div>
 
-    <!-- Main Projects Dashboard Grid -->
-    <div class="projects-grid">
-        
-        <!-- PROJECT 1: Frontend Website -->
+      <!-- Main Projects Dashboard Grid -->
+      <div class="projects-grid">
+        <!-- PROJECT 1: Traveling Application -->
         <div class="project-card" data-category="frontend">
-            <div class="project-image-box">
-                <img src="/images/traveling.jpeg" alt="Traveling Application">
-                <div class="project-overlay">
-                    <a href="https://my-first-pro-eight.vercel.app/#" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/Er-Ranjit/My-first-pro" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img src="/images/traveling.jpeg" alt="Traveling Application" />
+            <div class="project-overlay">
+              <a
+                href="https://my-first-pro-eight.vercel.app/#"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/My-first-pro"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">Frontend Website</span>
-                <h3>Traveling Application</h3>
-                <p>A beautiful immersive tour and travel planning responsive interface packing interactive dynamic flight bookings catalogs schemas.</p>
-                <div class="project-tech-used">
-                    <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span> <span>JavaScript</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">Frontend Website</span>
+            <h3>Traveling Application</h3>
+            <p>
+              A beautiful immersive tour and travel planning responsive
+              interface packing interactive dynamic flight bookings catalogs
+              schemas.
+            </p>
+            <div class="project-tech-used">
+              <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span>
+              <span>JavaScript</span>
             </div>
+          </div>
         </div>
 
-        <!-- PROJECT 2: Frontend Website -->
+        <!-- PROJECT 2: School Application -->
         <div class="project-card" data-category="frontend">
-            <div class="project-image-box">
-                <img src="/images/school.jpeg" alt="School Application">
-                <div class="project-overlay">
-                    <a href="https://sanskar-vidya-mandir-school-hftz-248uhq640.vercel.app/" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/Er-Ranjit/Sanskar-Vidya-Mandir-School" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img src="/images/school.jpeg" alt="School Application" />
+            <div class="project-overlay">
+              <a
+                href="https://sanskar-vidya-mandir-school-hftz-248uhq640.vercel.app/"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/Sanskar-Vidya-Mandir-School"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">Frontend Website</span>
-                <h3>School Application</h3>
-                <p>An educational institute information management system tracking batch metrics with seamless course listing arrays loops.</p>
-                <div class="project-tech-used">
-                    <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span> <span>JavaScript</span> <span>Firebase</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">Frontend Website</span>
+            <h3>School Application</h3>
+            <p>
+              An educational institute information management system tracking
+              batch metrics with seamless course listing arrays loops.
+            </p>
+            <div class="project-tech-used">
+              <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span>
+              <span>JavaScript</span> <span>Firebase</span>
             </div>
+          </div>
         </div>
 
-        <!-- PROJECT 3: Frontend Website -->
+        <!-- PROJECT 3: Fitness Tracking -->
         <div class="project-card" data-category="frontend">
-            <div class="project-image-box">
-                <img src="/images/fitness.jpeg" alt="Fitness Tracking">
-                <div class="project-overlay">
-                    <a href="https://fitness-tracking-web-sigma.vercel.app/dashboard" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/Er-Ranjit/Fitness-tracking-web" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img src="/images/fitness.jpeg" alt="Fitness Tracking" />
+            <div class="project-overlay">
+              <a
+                href="https://fitness-tracking-web-sigma.vercel.app/dashboard"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/Fitness-tracking-web"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">Frontend Website</span>
-                <h3>Fitness Tracking</h3>
-                <p>Real-time health activity tracking workspace displaying daily data calorie charts metrics configurations analytics sheets.</p>
-                <div class="project-tech-used">
-                    <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span> <span>JavaScript</span> <span>React.js</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">Frontend Website</span>
+            <h3>Fitness Tracking</h3>
+            <p>
+              Real-time health activity tracking workspace displaying daily data
+              calorie charts metrics configurations analytics sheets.
+            </p>
+            <div class="project-tech-used">
+              <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span>
+              <span>JavaScript</span> <span>React.js</span>
             </div>
+          </div>
         </div>
 
-         <!-- PROJECT 4: UI/UX Demo -->
+        <!-- PROJECT 4: Interactive Demo Website -->
         <div class="project-card" data-category="frontend">
-            <div class="project-image-box">
-                <img src="/images/demo-website.png" alt="Create Demo Website">
-                <div class="project-overlay">
-                    <a href="https://interactive-demo-website.vercel.app/" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/Er-Ranjit/-Interactive-Demo-Website" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img src="/images/demo-website.png" alt="Create Demo Website" />
+            <div class="project-overlay">
+              <a
+                href="https://interactive-demo-website.vercel.app/"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/-Interactive-Demo-Website"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">UI/UX Design</span>
-                <h3>Create Demo Website</h3>
-                <p>A hyper-responsive, lightning-fast digital design portfolio concept system packing highly modern glass grid sections mechanics.</p>
-                <div class="project-tech-used">
-                    <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span> <span>JavaScript</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">UI/UX Design</span>
+            <h3>Interactive Design UI</h3>
+            <p>
+              A hyper-responsive, lightning-fast digital design portfolio
+              concept system packing highly modern glass grid sections
+              mechanics.
+            </p>
+            <div class="project-tech-used">
+              <span>HTML5</span> <span>CSS3</span> <span>Bootstrap</span>
+              <span>JavaScript</span>
             </div>
+          </div>
         </div>
 
-          <!-- PROJECT 5: UI/UX Demo -->
+        <!-- PROJECT 5: Smart Enterprise Inventory System -->
         <div class="project-card" data-category="frontend">
-            <div class="project-image-box">
-                <img src="/images/smart.png" alt="Create Demo Website">
-                <div class="project-overlay">
-                    <a href="https://github.com/Er-Ranjit/Smart-Enterprise-Inventory-System" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://smart-enterprise-inventory-system.vercel.app/" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img
+              src="/images/smart.png"
+              alt="Smart Enterprise Inventory System"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://smart-enterprise-inventory-system.vercel.app/"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/Smart-Enterprise-Inventory-System"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">Smart Enterprise Inventory System</span>
-                <h3>Create Demo Website</h3>
-                <p>A centralized software platform that uses Artificial Intelligence (AI), Internet of Things (IoT), and automation to track, manage, and optimize supply chain assets across an entire organization in real time.</p>
-                <div class="project-tech-used">
-                    <span>HTML5</span> <span>tailwind css</span> <span>React.js</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble special-ai"
+              >AI & Automation System</span
+            >
+            <h3>Smart Enterprise Inventory</h3>
+            <p>
+              A centralized platform that uses Artificial Intelligence (AI) and
+              automation to track, manage, and optimize supply chain assets in
+              real time.
+            </p>
+            <div class="project-tech-used">
+              <span>HTML5</span> <span>Tailwind CSS</span> <span>React.js</span>
             </div>
+          </div>
         </div>
 
-        <!-- PROJECT 6: Full Stack (MERN) -->
+        <!-- PROJECT 6: Online Construction Material Booking -->
         <div class="project-card" data-category="fullstack">
-            <div class="project-image-box">
-                <img src="/images/cunstruction.jpeg" alt="Online Construction Material Booking System">
-                <div class="project-overlay">
-                    <a href="https://ranjit-construction-material-bookin.vercel.app/" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/Er-Ranjit/ranjit-construction-material-booking-system" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img
+              src="/images/cunstruction.jpeg"
+              alt="Online Construction Material Booking System"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://ranjit-construction-material-bookin.vercel.app/"
+                target="_blank"
+                class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit/ranjit-construction-material-booking-system"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">MERN Stack Website</span>
-                <h3>Online Construction Material Booking System</h3>
-                <p>An agile logistics system enabling builders to secure concrete supply chains, calculate volumes, and register online payments.</p>
-                <div class="project-tech-used">
-                    <span>React</span> <span>Node.js</span> <span>Express</span> <span>MongoDB</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">MERN Stack Website</span>
+            <h3>Construction Booking System</h3>
+            <p>
+              An agile logistics system enabling builders to secure concrete
+              supply chains, calculate volumes, and register online payments
+              securely.
+            </p>
+            <div class="project-tech-used">
+              <span>React</span> <span>Node.js</span> <span>Express</span>
+              <span>MongoDB</span>
             </div>
+          </div>
         </div>
 
-        <!-- PROJECT 7: Full Stack (PHP/Laravel) -->
+        <!-- PROJECT 7: Full Stack (PHP/Laravel Portfolio Base) -->
         <div class="project-card" data-category="fullstack">
-            <div class="project-image-box">
-                <img src="/images/coomig-website.jpeg" alt="Coming Soon Project">
-                <div class="project-overlay">
-                    <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="#" class="project-link-btn src-code"><i class="fab fa-github"></i> Code</a>
-                </div>
+          <div class="project-image-box">
+            <img
+              src="/images//coomig-website.jpeg"
+              alt="E-Commerce Laravel Application"
+              onerror="this.src = 'https://unsplash.com'"
+            />
+            <div class="project-overlay">
+              <a href="#" target="_blank" class="project-link-btn"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+              <a
+                href="https://github.com/Er-Ranjit"
+                target="_blank"
+                class="project-link-btn src-code"
+                ><i class="fab fa-github"></i> Code</a
+              >
             </div>
-            <div class="project-info-block">
-                <span class="project-tag-bubble">PHP Website</span>
-                <h3>Coming Soon Project</h3>
-                <p>An upcoming enterprise dashboard platform mapping database metrics, course pipes backend data architecture trackers.</p>
-                <div class="project-tech-used">
-                    <span>PHP</span> <span>Laravel</span> <span>MySQL</span>
-                </div>
+          </div>
+          <div class="project-info-block">
+            <span class="project-tag-bubble">Laravel Web Portal</span>
+            <h3>Advanced PHP Portal</h3>
+            <p>
+              A full-featured server-side solution packing secure MVC
+              structures, multi-role authentication engines, and query routers.
+            </p>
+            <div class="project-tech-used">
+              <span>PHP</span> <span>Laravel</span> <span>MySQL</span>
+              <span>Bootstrap</span>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-<section class="timeline-section" id="experiencepage" id="resume">
-    <div class="timeline-header" data-aos="fade-up">
+    <section class="timeline-section" id="experiencepage">
+      <div class="timeline-header" data-aos="fade-up">
         <p class="section-tag">MY JOURNEY</p>
-        <h2 class="timeline-title">Education & <span>Experience</span></h2>
-        <p class="timeline-subtitle">A detailed timeline of my academic background, professional training, and content creation milestone.</p>
-    </div>
+        <h2 class="timeline-title">
+          Education & <span class="gradient-text">Experience</span>
+        </h2>
+        <p class="timeline-subtitle">
+          A detailed timeline of my academic background, professional training,
+          and content creation milestones.
+        </p>
+      </div>
 
-    <!-- Main Vertical Timeline Spine Track -->
-    <div class="timeline-container">
+      <!-- Main Vertical Timeline Spine Track -->
+      <div class="timeline-container">
         <div class="timeline-line"></div>
 
         <!-- NODE 1: B.Tech Degree -->
         <div class="timeline-item left-item" data-aos="fade-right">
-            <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
-            <div class="timeline-card">
-                <span class="timeline-date">Graduation</span>
-                <h3>Bachelor of Technology (cse)</h3>
-                <h4>Apiit Sd India Collage</h4>
-                <h4>Computer Science & Engineering</h4>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Panipat, Haryana</span>
-                <p>Currently pursuing B.Tech in Computer Science & Engineering with a strong focus on Web Development, Database Management, Software Engineering, and Modern Full Stack Technologies.</p>
-            </div>
+          <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Graduation</span>
+            <h3>Bachelor of Technology (CSE)</h3>
+            <h4>APIIT SD India College</h4>
+            <h4 class="sub-stream">Computer Science & Engineering</h4>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Panipat, Haryana</span
+            >
+            <p>
+              Currently pursuing B.Tech in Computer Science & Engineering with a
+              strong focus on Web Development, Database Management, Software
+              Engineering, and Modern Full Stack Technologies.
+            </p>
+          </div>
         </div>
 
-        <!-- NODE 2: 3-Month Training (Sortiq Solutions) -->
+        <!-- NEW NODE 2: Agentic AI Learning (Added Here) -->
         <div class="timeline-item right-item" data-aos="fade-left">
-            <div class="timeline-dot experience-dot"><i class="fas fa-laptop-code"></i></div>
-            <div class="timeline-card highlight-card">
-                <span class="timeline-date">3 Months Training</span>
-                <h3>PHP Full Stack Development</h3>
-                <h4>Sortiq Solutions Private Limited.</h4>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span>
-                <p>Currently undergoing 3 months of professional industrial training in PHP Full Stack Development. Learning Core PHP, MySQL, JavaScript, Bootstrap, Git & GitHub, REST APIs, Responsive Web Design, and real-world project development practices.</p>
-            </div>
+          <div class="timeline-dot ai-dot"><i class="fas fa-robot"></i></div>
+          <div class="timeline-card ai-card">
+            <span class="timeline-date ai-date">Learning & Upskilling</span>
+            <h3>Agentic AI & LLM Engineering</h3>
+            <h4>Self-Paced Research & Development</h4>
+            <span class="location-tag"
+              ><i class="fas fa-brain"></i> Advanced AI Agents</span
+            >
+            <p>
+              Currently deep-diving into Agentic AI, Autonomous AI Agents, and
+              Large Language Models (LLMs). Learning to design intelligent
+              workflows, multi-agent systems, and integrate conversational AI
+              reasoning with full-stack software development.
+            </p>
+          </div>
         </div>
 
-        <!-- NODE 3: 45 Days Internship (Web Design & Dev) -->
+        <!-- NODE 3: 3-Month Training (Sortiq Solutions) -->
         <div class="timeline-item left-item" data-aos="fade-right">
-            <div class="timeline-dot experience-dot"><i class="fas fa-briefcase"></i></div>
-            <div class="timeline-card">
-                <span class="timeline-date">45 Days Internship</span>
-                <h3>Web Design & Development Intern</h3>
-                <h4>Solitaire Infosystems Pvt. Ltd.</h4>
-                <h4>Professional Industry Training</h4>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span>
-                <p>Gained hands-on experience building highly responsive modern user interfaces, writing clean layout logic, and mastering UI adjustments.</p>
-            </div>
+          <div class="timeline-dot experience-dot">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-card highlight-card">
+            <span class="timeline-date highlight-date">3 Months Training</span>
+            <h3>PHP Full Stack Development</h3>
+            <h4>Sortiq Solutions Private Limited.</h4>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span
+            >
+            <p>
+              Currently undergoing 3 months of professional industrial training
+              in PHP Full Stack Development. Learning Core PHP, MySQL,
+              JavaScript, Bootstrap, Git & GitHub, REST APIs, Responsive Web
+              Design, and real-world project development practices.
+            </p>
+          </div>
         </div>
 
-        <!-- NODE 4: YouTube Content Creator -->
+        <!-- NODE 4: 45 Days Internship (Web Design & Dev) -->
         <div class="timeline-item right-item" data-aos="fade-left">
-            <div class="timeline-dot creator-dot"><i class="fab fa-youtube"></i></div>
-            <div class="timeline-card youtube-card">
-                <span class="timeline-date">Content Creation</span>
-                <h3>Tech Content Creator</h3>
-                <h4>YouTube Channel Channel Network</h4>
-                <div class="youtube-stats">
-                    <span><i class="fas fa-users"></i> 500+ Subscribers</span>
-                </div>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span>
-                <p>Creating programming tutorials, developer roadmaps, and tech reviews to simplify web concepts for the developer community.</p>
-            </div>
+          <div class="timeline-dot experience-dot">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-date">45 Days Internship</span>
+            <h3>Web Design & Development Intern</h3>
+            <h4>Solitaire Infosystems Pvt. Ltd.</h4>
+            <h4 class="sub-stream">Professional Industry Training</h4>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span
+            >
+            <p>
+              Gained hands-on experience building highly responsive modern user
+              interfaces, writing clean layout logic, and mastering UI
+              adjustments.
+            </p>
+          </div>
         </div>
 
-        <!-- NODE 5: 12th Standard -->
+        <!-- NODE 5: YouTube Content Creator -->
         <div class="timeline-item left-item" data-aos="fade-right">
-            <div class="timeline-dot"><i class="fas fa-school"></i></div>
-            <div class="timeline-card">
-                <span class="timeline-date">Higher Secondary</span>
-                <h3>12th Standard Examination</h3>
-                <h4>A.N.S Collage</h4>
-                <h4>Science Stream Core</h4>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Nabinagar Road Aurangabad Bihar</span>
-                <p>Completed senior secondary school curriculum with a strong mathematical analytical background and core science concepts.</p>
+          <div class="timeline-dot creator-dot">
+            <i class="fab fa-youtube"></i>
+          </div>
+          <div class="timeline-card youtube-card">
+            <span class="timeline-date youtube-date">Content Creation</span>
+            <h3>Tech Content Creator</h3>
+            <h4>YouTube Channel Network</h4>
+            <div class="youtube-stats">
+              <span><i class="fas fa-users"></i> 500+ Subscribers</span>
             </div>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Mohali, Punjab</span
+            >
+            <p>
+              Creating programming tutorials, developer roadmaps, and tech
+              reviews to simplify web concepts for the developer community.
+            </p>
+          </div>
         </div>
 
-        <!-- NODE 6: 10th Standard -->
+        <!-- NODE 6: 12th Standard -->
         <div class="timeline-item right-item" data-aos="fade-left">
-            <div class="timeline-dot"><i class="fas fa-book"></i></div>
-            <div class="timeline-card">
-                <span class="timeline-date">High School</span>
-                <h3>10th Standard Examination</h3>
-                <h4>MG+2 High School</h4>
-                <h4>General Matriculation</h4>
-                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Naur Nabinagar Road Aurangabad Bihar</span>
-                <p>Successfully passed general high school metrics layout covering basic logical sciences, computational data, and analytics foundations.</p>
-            </div>
+          <div class="timeline-dot"><i class="fas fa-school"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Higher Secondary</span>
+            <h3>12th Standard Examination</h3>
+            <h4>A.N.S College</h4>
+            <h4 class="sub-stream">Science Stream Core</h4>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Nabinagar Road, Aurangabad,
+              Bihar</span
+            >
+            <p>
+              Completed senior secondary school curriculum with a strong
+              mathematical analytical background and core science concepts.
+            </p>
+          </div>
         </div>
 
-    </div>
-</section>
+        <!-- NODE 7: 10th Standard -->
+        <div class="timeline-item left-item" data-aos="fade-right">
+          <div class="timeline-dot"><i class="fas fa-book"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">High School</span>
+            <h3>10th Standard Examination</h3>
+            <h4>MG+2 High School</h4>
+            <h4 class="sub-stream">General Matriculation</h4>
+            <span class="location-tag"
+              ><i class="fas fa-map-marker-alt"></i> Naur Nabinagar Road,
+              Aurangabad, Bihar</span
+            >
+            <p>
+              Successfully passed general high school metrics layout covering
+              basic logical sciences, computational data, and analytics
+              foundations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="contact-section" id="contactpage" data-aos="fade-up">
-    <div class="contact-container">
-        
+    <section class="contact-section" id="contactpage" data-aos="fade-up">
+      <div class="contact-container">
         <!-- Left Column: Direct Connect Details -->
         <div class="contact-info-panel">
-            <p class="section-tag">LET'S CONNECT</p>
-            <h2 class="contact-title">Let's Build Something <span>Great Together!</span></h2>
-            <p class="contact-subtitle">Have a project, job opening, or want to discuss a youtube tutorial layout? Drop a line and I'll get back to you within 24 hours.</p>
+          <p class="section-tag">LET'S CONNECT</p>
+          <h2 class="contact-title">
+            Let's Build Something
+            <span class="gradient-text">Great Together!</span>
+          </h2>
+          <p class="contact-subtitle">
+            Have a project, job opening, or want to discuss a YouTube tutorial
+            layout? Drop a line and I'll get back to you within 24 hours.
+          </p>
 
-            <div class="contact-details-list">
-                <div class="contact-detail-card">
-                    <div class="detail-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="detail-meta">
-                        <h4>Email Me Directly</h4>
-                        <p><a href="mailto:ranjitkumar@example.com">ranjitkumar728064@gmail.com</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-detail-card">
-                    <div class="detail-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="detail-meta">
-                        <h4>Current Hub Location</h4>
-                        <p>Mohali, Punjab, India</p>
-                    </div>
-                </div>
+          <div class="contact-details-list">
+            <div class="contact-detail-card">
+              <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+              <div class="detail-meta">
+                <h4>Email Me Directly</h4>
+                <p>
+                  <a href="mailto:ranjitkumar728064@gmail.com"
+                    >ranjitkumar728064@gmail.com</a
+                  >
+                </p>
+              </div>
             </div>
 
-            <!-- Social Sync Handles Track -->
-            <div class="contact-social-track">
-                <a href="https://github.com/Er-Ranjit" class="social-bubble github-bubble" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ranjit-kumar-5072b033b" class="social-bubble linkedin-bubble" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@MagahiPanchayatComedy" class="social-bubble youtube-bubble" title="YouTube Channel"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/br26_coder_6205" class="social-bubble instagram-bubble" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="contact-detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="detail-meta">
+                <h4>Current Hub Location</h4>
+                <p>Mohali, Punjab, India</p>
+              </div>
             </div>
+          </div>
+
+          <!-- Social Sync Handles Track -->
+          <div class="contact-social-track">
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="social-bubble github-bubble"
+              title="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              class="social-bubble linkedin-bubble"
+              title="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              class="social-bubble youtube-bubble"
+              title="YouTube Channel"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="social-bubble instagram-bubble"
+              title="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
         </div>
 
         <!-- Right Column: Interactive Secure Message Form -->
         <div class="contact-form-panel">
-            <form class="premium-interactive-form" id="portfolioContactForm">
-                <div class="form-input-group">
-                    <label for="userName">Full Name</label>
-                    <div class="input-wrapper">
-                        <i class="far fa-user"></i>
-                        <input type="text" id="userName" placeholder="John Doe" required>
-                    </div>
-                </div>
+          <form class="premium-interactive-form" id="portfolioContactForm">
+            <div class="form-input-group">
+              <label for="userName">Full Name</label>
+              <div class="input-wrapper">
+                <i class="far fa-user"></i>
+                <input
+                  type="text"
+                  id="userName"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+            </div>
 
-                <div class="form-input-group">
-                    <label for="userEmail">Email Address</label>
-                    <div class="input-wrapper">
-                        <i class="far fa-envelope"></i>
-                        <input type="email" id="userEmail" placeholder="john@gmail.com" required>
-                    </div>
-                </div>
+            <div class="form-input-group">
+              <label for="userEmail">Email Address</label>
+              <div class="input-wrapper">
+                <i class="far fa-envelope"></i>
+                <input
+                  type="email"
+                  id="userEmail"
+                  placeholder="john@gmail.com"
+                  required
+                />
+              </div>
+            </div>
 
-                <div class="form-input-group">
-                    <label for="userMessage">Your Message</label>
-                    <div class="input-wrapper textarea-wrapper">
-                        <i class="far fa-comment-alt"></i>
-                        <textarea id="userMessage" rows="5" placeholder="Hi Ranjit, I love your portfolio..." required></textarea>
-                    </div>
-                </div>
+            <div class="form-input-group">
+              <label for="userMessage">Your Message</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="far fa-comment-alt"></i>
+                <textarea
+                  id="userMessage"
+                  rows="5"
+                  placeholder="Hi Ranjit, I love your portfolio..."
+                  required
+                ></textarea>
+              </div>
+            </div>
 
-                <button type="submit" class="btn primary btn-submit-form">
-                    Send Secure Message <i class="far fa-paper-plane"></i>
-                </button>
-            </form>
+            <button type="submit" class="btn primary btn-submit-form">
+              <span>Send Secure Message</span>
+              <i class="far fa-paper-plane"></i>
+            </button>
+          </form>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-    <!-- PREMiUM PORTFOLIO MINI FOOTER BLOCK -->
-    <footer class="portfolio-footer">
-        <p>&copy; 2026 <span>Ranjit Kumar</span>. All Rights Reserved.</p>
-        <p class="footer-credit-line">Crafted with clean code & glassy aesthetics</p>
-    </footer>
-</section>
-
-<!-- ULTRA PREMIUM AUTOMATED 404 ERROR OVERLAY SHEET -->
-<div class="error-404-viewport" id="errorPage404">
-    <div class="error-404-card">
+    <!-- ULTRA PREMIUM AUTOMATED 404 ERROR OVERLAY SHEET -->
+    <div class="error-404-viewport" id="errorPage404">
+      <div class="error-404-card">
         <div class="error-illustration">
-            <span class="digit">4</span>
-            <div class="moving-gear-icon"><i class="fas fa-cog"></i></div>
-            <span class="digit">4</span>
+          <span class="digit">4</span>
+          <div class="moving-gear-icon"><i class="fas fa-cog"></i></div>
+          <span class="digit">4</span>
         </div>
         <h2>Page Not Found</h2>
-        <p>Bhai, jo service ya URL aap dhoodh rahe hain vo is local port structure par available nahi hai. Let's redirect you back safely.</p>
+        <p>
+          Bhai, jo service ya URL aap dhoodh rahe hain vo is local port
+          structure par available nahi hai. Let's redirect you back safely.
+        </p>
         <button class="btn primary reset-url-btn" id="goHomeErrorBtn">
-            <i class="fas fa-home"></i> Back To Portfolio
+          <i class="fas fa-home"></i> Back To Portfolio
         </button>
+      </div>
     </div>
-</div>
 
-
-
-
-<!-- ULTRA PREMIUM PORTFOLIO FOOTER SHIELD -->
-<footer class="portfolio-footer-block">
-    <div class="footer-main-grid">
-        
+    <!-- ULTRA PREMIUM PORTFOLIO FOOTER SHIELD -->
+    <footer class="portfolio-footer-block">
+      <div class="footer-main-grid">
         <!-- COLUMN 1: Short Brand Intro -->
         <div class="footer-col brand-col">
-            <div class="footer-logo">
-                <span>RK</span> / Ranjit Kumar
-            </div>
-            <p class="brand-pitch">Building high-performance MERN & Laravel web platforms that bridge the gap between elegant UI aesthetics and secure backend databases infrastructure architectures.</p>
+          <div class="footer-logo">
+            <span class="logo-box">RK</span> / Ranjit Kumar
+          </div>
+          <p class="brand-pitch">
+            Building high-performance MERN & Laravel web platforms that bridge
+            the gap between elegant UI aesthetics and secure backend databases
+            infrastructure architectures.
+          </p>
         </div>
 
         <!-- COLUMN 2: Quick Links Maps -->
         <div class="footer-col links-col">
-            <h3>Quick Navigation</h3>
-            <ul class="footer-links-list">
-                <li><a href="#homepage"><i class="fas fa-chevron-right"></i> Home</a></li>
-                <li><a href="#aboutpage"><i class="fas fa-chevron-right"></i> About Me</a></li>
-                <li><a href="#skillspage"><i class="fas fa-chevron-right"></i> Core Skills</a></li>
-                <li><a href="#projectspage"><i class="fas fa-chevron-right"></i> Recent Work</a></li>
-                <li><a href="#resume"><i class="fas fa-chevron-right"></i> Journey Timeline</a></li>
-            </ul>
+          <h3>Quick Navigation</h3>
+          <ul class="footer-links-list">
+            <li>
+              <a href="#homepage"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="#aboutpage"
+                ><i class="fas fa-chevron-right"></i> About Me</a
+              >
+            </li>
+            <li>
+              <a href="#skillspage"
+                ><i class="fas fa-chevron-right"></i> Core Skills</a
+              >
+            </li>
+            <li>
+              <a href="#projectspage"
+                ><i class="fas fa-chevron-right"></i> Recent Work</a
+              >
+            </li>
+            <li>
+              <a href="#experiencepage"
+                ><i class="fas fa-chevron-right"></i> Journey Timeline</a
+              >
+            </li>
+          </ul>
         </div>
 
         <!-- COLUMN 3: Social & Content Stats -->
         <div class="footer-col social-col">
-            <h3>Connect Everywhere</h3>
-            <p class="social-pitch">Follow my programming pipelines, tech tutorial boards, or view live coding modules repositories links below.</p>
-            <div class="footer-social-bubbles">
-                <a href="https://github.com/Er-Ranjit" class="f-bubble gh-f" title="GitHub Source"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ranjit-kumar-5072b033b" class="f-bubble li-f" title="LinkedIn Network"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@MagahiPanchayatComedy" class="f-bubble yt-f" title="YouTube Tutorials"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/br26_coder_6205" class="f-bubble ig-f" title="Instagram Feeds"><i class="fab fa-instagram"></i></a>
-            </div>
+          <h3>Connect Everywhere</h3>
+          <p class="social-pitch">
+            Follow my programming pipelines, tech tutorial boards, or view live
+            coding modules repositories links below.
+          </p>
+          <div class="footer-social-bubbles">
+            <a
+              href="https://github.com/Er-Ranjit"
+              target="_blank"
+              class="f-bubble gh-f"
+              title="GitHub Source"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/ranjit-kumar-5072b033b"
+              target="_blank"
+              class="f-bubble li-f"
+              title="LinkedIn Network"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@MagahiPanchayatComedy"
+              target="_blank"
+              class="f-bubble yt-f"
+              title="YouTube Tutorials"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/br26_coder_6205"
+              target="_blank"
+              class="f-bubble ig-f"
+              title="Instagram Feeds"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
         </div>
+      </div>
 
-    </div>
-
-    <!-- BOTTOM BAR: Copywrite and dynamic stamp trackers -->
-    <div class="footer-bottom-bar">
-        <p>&copy; <span id="copyrightYear">2026</span> <span class="owner-name">Ranjit Kumar</span>. All Rights Reserved.</p>
+      <!-- BOTTOM BAR: Copywrite and dynamic stamp trackers -->
+      <div class="footer-bottom-bar">
+        <p>
+          &copy; <span id="copyrightYear">2026</span>
+          <span class="owner-name">Ranjit Kumar</span>. All Rights Reserved.
+        </p>
         <div class="footer-meta-tags">
-            <span><i class="fas fa-code"></i> Clean Code</span>
-            <span><i class="fas fa-bolt"></i> Fast Load</span>
-            <span><i class="fas fa-shield-alt"></i> Secure MVC</span>
+          <span><i class="fas fa-code"></i> Clean Code</span>
+          <span><i class="fas fa-bolt"></i> Fast Load</span>
+          <span><i class="fas fa-shield-alt"></i> Secure MVC</span>
         </div>
-    </div>
-</footer>
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      </div>
+    </footer>
 
-<!-- Typed.js -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-<!-- Your JavaScript -->
-<script src="script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-<script>
-    AOS.init({
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+
+    <script>
+      AOS.init({
         duration: 1000,
-        once: true
-    });
-</script>
-
-</body>
+        once: true,
+      });
+    </script>
+  </body>
 </html>
