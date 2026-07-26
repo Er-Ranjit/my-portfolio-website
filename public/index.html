@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="shortcut icon" href="/images/ranjitphp.jpeg" type="image/x-icon">
 </head>
@@ -28,33 +27,149 @@
 
     <div id="particles-js"></div>
 
-    <header>
-        <div class="logo">
-            <span>RK</span> / Ranjit Kumar
+<!--==========================
+        PREMIUM NAVBAR
+===========================-->
+
+<header class="header">
+
+    <!-- Logo -->
+    <a href="#homepage" class="logo">
+
+        <div class="logo-icon">
+            RK
         </div>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#homepage" class="active">Home</a></li>
-                <li><a href="#aboutpage">About</a></li>
-                <li><a href="#skillspage">Skills</a></li>
-                <li><a href="#projectspage">Projects</a></li>
-                <li><a href="#experiencepage">Experience</a></li>
-                <li><a href="#contactpage">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo-content">
+            <h2>Ranjit Kumar</h2>
+        </div>
 
-        <a href="/agentiai.html" class="hire-btn">
-            MY AI Assistant
-            <i class="fa-regular fa-paper-plane"></i>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#homepage" class="active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#aboutpage">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#skillspage">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Skills</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#projectspage">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Projects</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#experiencepage">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Experience</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#contactpage">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Right Side -->
+    <div class="nav-right">
+
+        <!-- Desktop AI Button -->
+        <a href="/agentiai.html" class="ai-btn desktop-ai">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>My AI Assistant</span>
+
         </a>
 
+        <!-- Mobile Menu Button -->
         <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+
         </div>
-    </header>
+
+    </div>
+
+</header>
+
+<!--==========================
+      MOBILE MENU
+===========================-->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#homepage">
+        <i class="fa-solid fa-house"></i>
+        Home
+    </a>
+
+    <a href="#aboutpage">
+        <i class="fa-solid fa-user"></i>
+        About
+    </a>
+
+    <a href="#skillspage">
+        <i class="fa-solid fa-code"></i>
+        Skills
+    </a>
+
+    <a href="#projectspage">
+        <i class="fa-solid fa-laptop-code"></i>
+        Projects
+    </a>
+
+    <a href="#experiencepage">
+        <i class="fa-solid fa-briefcase"></i>
+        Experience
+    </a>
+
+    <a href="#contactpage">
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+    </a>
+
+    <div class="mobile-divider"></div>
+
+    <a href="/agentiai.html" class="ai-btn mobile-ai">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <span>My AI Assistant</span>
+
+    </a>
+
+</div>
+
 
     
 

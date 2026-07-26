@@ -47,31 +47,168 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // --- 2. Mobile Menu Toggle Action ---
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+/*=========================================
+        PREMIUM NAVBAR JS
+=========================================*/
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('open');
-            menuToggle.classList.toggle('is-active');
-        });
+const header = document.querySelector(".header");
+const menuToggle = document.getElementById("mobile-menu");
+const mobileMenu = document.getElementById("mobileMenu");
 
-        document.addEventListener('click', (e) => {
-            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                navLinks.classList.remove('open');
-                menuToggle.classList.remove('is-active');
-            }
-        });
+/* =========================
+      Mobile Menu Toggle
+========================= */
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                menuToggle.classList.remove('is-active');
-            });
-        });
+menuToggle.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    menuToggle.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+
+});
+
+/* =========================
+      Close Outside Click
+========================= */
+
+document.addEventListener("click", (e) => {
+
+    if (
+        !mobileMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ) {
+
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("open");
+
     }
+
+});
+
+/* =========================
+      Stop Closing
+========================= */
+
+mobileMenu.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+});
+
+/* =========================
+      Close After Click Link
+========================= */
+
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+mobileLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("open");
+
+    });
+
+});
+
+/* =========================
+      Navbar Scroll Effect
+========================= */
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+/* =========================
+      Active Navigation
+========================= */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+
+        if (window.scrollY >= top && window.scrollY < top + height) {
+
+            current = section.id;
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+    mobileNavLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/* =========================
+      Smooth Scroll
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            e.preventDefault();
+
+            window.scrollTo({
+
+                top: target.offsetTop - 90,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    });
+
+});
 
     
 
@@ -217,24 +354,276 @@ document.addEventListener("DOMContentLoaded", () => {
 .then(data => console.log(data))
 .catch(err => console.error(err));
 
+/* ==========================================
+        PREMIUM AI ASSISTANT
+========================================== */
+
 const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userMessage");
+const chatBox = document.getElementById("chatBox");
 
-sendBtn.addEventListener("click", async () => {
+/* ==========================================
+        SEND MESSAGE
+========================================== */
 
-    const message = document.getElementById("userMessage").value;
+async function sendMessage(message = null){
 
-    const response = await fetch("/chat", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
-    });
+    const text = message || userInput.value.trim();
 
-    const data = await response.json();
+    if(text === "") return;
 
-    document.getElementById("chatBox").innerHTML += `
-        <p><b>You:</b> ${message}</p>
-        <p><b>AI:</b> ${data.reply}</p>
+    if(!message){
+        userInput.value = "";
+    }
+
+    addUserMessage(text);
+
+    showTyping();
+
+    try{
+
+        const response = await fetch("/chat",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                message:text
+            })
+
+        });
+
+        const data = await response.json();
+
+        removeTyping();
+
+        addBotMessage(data.reply);
+
+    }
+
+    catch(error){
+
+        removeTyping();
+
+        addBotMessage("❌ Unable to connect with AI Assistant.");
+
+    }
+
+}
+
+/* ==========================================
+        USER MESSAGE
+========================================== */
+
+function addUserMessage(text){
+
+    const div=document.createElement("div");
+
+    div.className="user-message";
+
+    div.innerHTML=`${text}`;
+
+    chatBox.appendChild(div);
+
+    scrollBottom();
+
+}
+
+/* ==========================================
+        BOT MESSAGE
+========================================== */
+
+function addBotMessage(text){
+
+    const div=document.createElement("div");
+
+    div.className="bot-message";
+
+    div.innerHTML=`
+        <p class="msg-txt">${text}</p>
     `;
+
+    chatBox.appendChild(div);
+
+    scrollBottom();
+
+}
+
+/* ==========================================
+        TYPING EFFECT
+========================================== */
+
+function showTyping(){
+
+    removeTyping();
+
+    const typing=document.createElement("div");
+
+    typing.className="typing-indicator";
+
+    typing.id="typing";
+
+    typing.innerHTML=`
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+    `;
+
+    chatBox.appendChild(typing);
+
+    scrollBottom();
+
+}
+
+function removeTyping(){
+
+    const typing=document.getElementById("typing");
+
+    if(typing){
+
+        typing.remove();
+
+    }
+
+}
+
+/* ==========================================
+        AUTO SCROLL
+========================================== */
+
+function scrollBottom(){
+
+    setTimeout(()=>{
+
+        chatBox.scrollTo({
+
+            top:chatBox.scrollHeight,
+
+            behavior:"smooth"
+
+        });
+
+    },100);
+
+}
+
+/* ==========================================
+      BUTTON CLICK
+========================================== */
+
+sendBtn.addEventListener("click",()=>{
+
+    sendMessage();
+
 });
+
+/* ==========================================
+        ENTER KEY
+========================================== */
+
+userInput.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Enter"){
+
+        e.preventDefault();
+
+        sendMessage();
+
+    }
+
+});
+
+/* ==========================================
+      QUICK SUGGESTION CLICK
+========================================== */
+
+function handleSuggestionClick(text){
+
+    sendMessage(text);
+
+}
+
+window.handleSuggestionClick=handleSuggestionClick;
+
+/* ==========================================
+        AUTO FOCUS
+========================================== */
+
+window.addEventListener("load",()=>{
+
+    userInput.focus();
+
+});
+
+/* ==========================================
+      BUTTON ANIMATION
+========================================== */
+
+sendBtn.addEventListener("mousedown",()=>{
+
+    sendBtn.style.transform="scale(.90)";
+
+});
+
+sendBtn.addEventListener("mouseup",()=>{
+
+    sendBtn.style.transform="scale(1)";
+
+});
+
+sendBtn.addEventListener("mouseleave",()=>{
+
+    sendBtn.style.transform="scale(1)";
+
+});
+
+/* ==========================================
+      INPUT PLACEHOLDER ANIMATION
+========================================== */
+
+const placeholders=[
+
+"Ask about Skills...",
+
+"Ask about Projects...",
+
+"Ask about Experience...",
+
+"Ask about Education...",
+
+"Ask anything..."
+
+];
+
+let index=0;
+
+setInterval(()=>{
+
+    userInput.setAttribute(
+
+        "placeholder",
+
+        placeholders[index]
+
+    );
+
+    index++;
+
+    if(index>=placeholders.length){
+
+        index=0;
+
+    }
+
+},2500);
+
+/* ==========================================
+        END
+========================================== */
