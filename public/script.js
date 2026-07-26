@@ -570,11 +570,18 @@ function handleSuggestionClick(text) {
 window.handleSuggestionClick = handleSuggestionClick;
 
 /* ==========================================
-        AUTO FOCUS
+        AUTO FOCUS (Only AI Page)
 ========================================== */
 
 window.addEventListener("load", () => {
-  userInput.focus();
+
+    if (
+        window.location.pathname.includes("agentiai.html") &&
+        userInput
+    ) {
+        userInput.focus();
+    }
+
 });
 
 /* ==========================================
