@@ -24,13 +24,12 @@
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
-body {
+html,body {
   background: var(--bg);
-  overflow-x: hidden;
+   width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 /* ==========================================
@@ -437,6 +436,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+    isolation:isolate;
 }
 
 /* Background Soft Ambient Auras */
@@ -448,27 +448,30 @@ body {
   left: 0;
   z-index: 0;
   pointer-events: none;
+   inset:0;
+    overflow:hidden;
 }
 .blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(140px);
   opacity: 0.1;
+  will-change:transform;
   animation: floatBlobs 15s infinite ease-in-out;
 }
 .blob-1 {
   width: 450px;
   height: 450px;
   background: #3b82f6;
-  top: -10%;
-  left: -5%;
+  top:-120px;
+    left:-120px;
 }
 .blob-2 {
   width: 550px;
   height: 550px;
   background: #6366f1;
-  bottom: -10%;
-  right: -5%;
+  bottom:-180px;
+    right:-180px;
   animation-delay: -7.5s;
 }
 
