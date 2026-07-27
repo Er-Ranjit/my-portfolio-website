@@ -339,20 +339,46 @@ if (copyrightYearSpan) {
   copyrightYearSpan.textContent = new Date().getFullYear();
 }
 
-// --- 6. Contact Form Success Response Trigger ---
 const contactForm = document.getElementById("portfolioContactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevents instant reload page
 
-    // Temporary sweet response alert simulation
-    alert(
-      "Thank you, message sent successfully! Ranjit will connect with you soon.",
-    );
-    contactForm.reset(); // Clears all visual inputs boxes fields
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("userName").value;
+    const email = document.getElementById("userEmail").value;
+    const message = document.getElementById("userMessage").value;
+
+    try {
+      const response = await fetch(
+        "https://my-portfolio-website-il0g.onrender.com/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("✅ Message Sent Successfully!");
+        contactForm.reset();
+      } else {
+        alert(data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("❌ Server Error");
+    }
   });
 }
-
 // --- 7. Automated Copyright Year Synchronization Hook ---
 const yearSpan = document.getElementById("copyrightYear");
 if (yearSpan) {
