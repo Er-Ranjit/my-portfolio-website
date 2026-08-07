@@ -12,7 +12,7 @@ Bihar, India
 Education:
 B.Tech in Computer Science Engineering
 APIIT SD India, Panipat
-
+  
 Skills:
 - HTML
 - CSS
